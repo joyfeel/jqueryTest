@@ -1,0 +1,41 @@
+.ui-menu { 
+	width: 700px; 
+}
+
+.cmdTitle {
+	border: 1px solid #e78f08;
+	background: #f6a828 url("jqueryUI/images/ui-bg_gloss-wave_35_f6a828_500x100.png") 50% 50% repeat-x;
+	color: #ffffff;
+	font-weight: bold;
+	padding: 0.2em;
+}
+
+.cmdSelected {
+	height: 500px;
+	width: 20%;
+	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+#TextBoxesGroup {
+	height: 500px;
+	width: 80%;
+	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.cmdSelected {
+	float: left;
+}
+
+#TextBoxesGroup {
+	margin-left: 20%;
+}
+
+fieldset {
+	margin: 0;
+	padding: 0;
+	border-width: 0;
+}

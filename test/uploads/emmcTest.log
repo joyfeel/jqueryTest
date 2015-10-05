@@ -1,0 +1,346 @@
+ Starting tests of card mmc00001...
+ Test case 1. Basic write (no data verification)...
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 2. Basic read (no data verification)...
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 3. Basic write (with data verification)...
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 4. Basic read (with data verification)...
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 5. Multi-block write...
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 6. Multi-block read...
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 7. Power of two block writes...
+ Result UNSUPPORTED (by card)
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 8. Power of two block reads...
+ Result UNSUPPORTED (by card)
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 9. Weird sized block writes...
+ Result UNSUPPORTED (by card)
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 10. Weird sized block reads...
+ Result UNSUPPORTED (by card)
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 11. Badly aligned write...
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 12. Badly aligned read...
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 13. Badly aligned multi-block write...
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 14. Badly aligned multi-block read...
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 15. Correct xfer_size at write (start failure)...
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 16. Correct xfer_size at read (start failure)...
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 17. Correct xfer_size at write (midway failure)...
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 18. Correct xfer_size at read (midway failure)...
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 19. Highmem write...
+ Highmem not configured - test skipped
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 20. Highmem read...
+ Highmem not configured - test skipped
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 21. Multi-block highmem write...
+ Highmem not configured - test skipped
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 22. Multi-block highmem read...
+ Highmem not configured - test skipped
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 23. Best-case read performance...
+ Transfer of 1 x 1024 sectors (1 x 512 KiB) took 0.004479619 seconds (117038 kB/s, 114295 KiB/s, 223.23 IOPS, sg_len 8)
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 24. Best-case write performance...
+ Transfer of 1 x 1024 sectors (1 x 512 KiB) took 0.012340396 seconds (42485 kB/s, 41489 KiB/s, 81.03 IOPS, sg_len 8)
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 25. Best-case read performance into scattered pages...
+ Transfer of 1 x 1024 sectors (1 x 512 KiB) took 0.004040178 seconds (129768 kB/s, 126727 KiB/s, 247.51 IOPS, sg_len 128)
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 26. Best-case write performance from scattered pages...
+ Transfer of 1 x 1024 sectors (1 x 512 KiB) took 0.012256027 seconds (42777 kB/s, 41775 KiB/s, 81.59 IOPS, sg_len 128)
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 27. Single read performance by transfer size...
+ Transfer of 1 x 1 sectors (1 x 0.5 KiB) took 0.000189689 seconds (2699 kB/s, 2635 KiB/s, 5271.78 IOPS, sg_len 1)
+ Transfer of 1 x 2 sectors (1 x 1 KiB) took 0.000307581 seconds (3329 kB/s, 3251 KiB/s, 3251.17 IOPS, sg_len 1)
+ Transfer of 1 x 4 sectors (1 x 2 KiB) took 0.000317079 seconds (6458 kB/s, 6307 KiB/s, 3153.78 IOPS, sg_len 1)
+ Transfer of 1 x 8 sectors (1 x 4 KiB) took 0.000279645 seconds (14647 kB/s, 14303 KiB/s, 3575.96 IOPS, sg_len 1)
+ Transfer of 1 x 16 sectors (1 x 8 KiB) took 0.000235225 seconds (34826 kB/s, 34009 KiB/s, 4251.24 IOPS, sg_len 1)
+ Transfer of 1 x 32 sectors (1 x 16 KiB) took 0.000226285 seconds (72404 kB/s, 70707 KiB/s, 4419.20 IOPS, sg_len 1)
+ Transfer of 1 x 64 sectors (1 x 32 KiB) took 0.000731378 seconds (44803 kB/s, 43753 KiB/s, 1367.28 IOPS, sg_len 1)
+ Transfer of 1 x 128 sectors (1 x 64 KiB) took 0.000860165 seconds (76190 kB/s, 74404 KiB/s, 1162.56 IOPS, sg_len 1)
+ Transfer of 1 x 256 sectors (1 x 128 KiB) took 0.001289829 seconds (101619 kB/s, 99237 KiB/s, 775.29 IOPS, sg_len 2)
+ Transfer of 1 x 512 sectors (1 x 256 KiB) took 0.001695187 seconds (154640 kB/s, 151015 KiB/s, 589.90 IOPS, sg_len 4)
+ Transfer of 1 x 1024 sectors (1 x 512 KiB) took 0.003818083 seconds (137317 kB/s, 134098 KiB/s, 261.91 IOPS, sg_len 8)
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 28. Single write performance by transfer size...
+ Transfer of 1 x 1 sectors (1 x 0.5 KiB) took 0.000629968 seconds (812 kB/s, 793 KiB/s, 1587.38 IOPS, sg_len 1)
+ Transfer of 1 x 2 sectors (1 x 1 KiB) took 0.000847314 seconds (1208 kB/s, 1180 KiB/s, 1180.20 IOPS, sg_len 1)
+ Transfer of 1 x 4 sectors (1 x 2 KiB) took 0.002713194 seconds (754 kB/s, 737 KiB/s, 368.56 IOPS, sg_len 1)
+ Transfer of 1 x 8 sectors (1 x 4 KiB) took 0.000516546 seconds (7929 kB/s, 7743 KiB/s, 1935.93 IOPS, sg_len 1)
+ Transfer of 1 x 16 sectors (1 x 8 KiB) took 0.000610692 seconds (13414 kB/s, 13099 KiB/s, 1637.48 IOPS, sg_len 1)
+ Transfer of 1 x 32 sectors (1 x 16 KiB) took 0.002746997 seconds (5964 kB/s, 5824 KiB/s, 364.03 IOPS, sg_len 1)
+ Transfer of 1 x 64 sectors (1 x 32 KiB) took 0.000901231 seconds (36359 kB/s, 35506 KiB/s, 1109.59 IOPS, sg_len 1)
+ Transfer of 1 x 128 sectors (1 x 64 KiB) took 0.003100394 seconds (21137 kB/s, 20642 KiB/s, 322.53 IOPS, sg_len 1)
+ Transfer of 1 x 256 sectors (1 x 128 KiB) took 0.003628394 seconds (36123 kB/s, 35277 KiB/s, 275.60 IOPS, sg_len 2)
+ Transfer of 1 x 512 sectors (1 x 256 KiB) took 0.006669842 seconds (39302 kB/s, 38381 KiB/s, 149.92 IOPS, sg_len 4)
+ Transfer of 1 x 1024 sectors (1 x 512 KiB) took 0.012372522 seconds (42375 kB/s, 41382 KiB/s, 80.82 IOPS, sg_len 8)
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 29. Single trim performance by transfer size...
+ Transfer of 1 sectors (0.5 KiB) took 0.004421232 seconds (115 kB/s, 113 KiB/s, 226.18 IOPS)
+ Transfer of 2 sectors (1 KiB) took 0.008553321 seconds (119 kB/s, 116 KiB/s, 116.91 IOPS)
+ Transfer of 4 sectors (2 KiB) took 0.005037233 seconds (406 kB/s, 397 KiB/s, 198.52 IOPS)
+ Transfer of 8 sectors (4 KiB) took 0.003989893 seconds (1026 kB/s, 1002 KiB/s, 250.63 IOPS)
+ Transfer of 16 sectors (8 KiB) took 0.003720026 seconds (2202 kB/s, 2150 KiB/s, 268.81 IOPS)
+ Transfer of 32 sectors (16 KiB) took 0.003568331 seconds (4591 kB/s, 4483 KiB/s, 280.24 IOPS)
+ Transfer of 64 sectors (32 KiB) took 0.003607162 seconds (9084 kB/s, 8871 KiB/s, 277.22 IOPS)
+ Transfer of 128 sectors (64 KiB) took 0.006953398 seconds (9425 kB/s, 9204 KiB/s, 143.81 IOPS)
+ Transfer of 256 sectors (128 KiB) took 0.003515531 seconds (37283 kB/s, 36409 KiB/s, 284.45 IOPS)
+ Transfer of 512 sectors (256 KiB) took 0.003661080 seconds (71602 kB/s, 69924 KiB/s, 273.14 IOPS)
+ Transfer of 1024 sectors (512 KiB) took 0.003598223 seconds (145707 kB/s, 142292 KiB/s, 277.91 IOPS)
+ Transfer of 2048 sectors (1024 KiB) took 0.003746286 seconds (279897 kB/s, 273337 KiB/s, 266.93 IOPS)
+ Transfer of 4096 sectors (2048 KiB) took 0.004077613 seconds (514308 kB/s, 502254 KiB/s, 245.24 IOPS)
+ Transfer of 8192 sectors (4096 KiB) took 0.004411454 seconds (950775 kB/s, 928492 KiB/s, 226.68 IOPS)
+ Transfer of 16384 sectors (8192 KiB) took 0.004942807 seconds (1697134 kB/s, 1657357 KiB/s, 202.31 IOPS)
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 30. Consecutive read performance by transfer size...
+ Transfer of 16384 x 1 sectors (16384 x 0.5 KiB) took 1.849278609 seconds (4536 kB/s, 4429 KiB/s, 8859.67 IOPS, sg_len 1)
+ Transfer of 8192 x 2 sectors (8192 x 1 KiB) took 1.283835515 seconds (6534 kB/s, 6380 KiB/s, 6380.87 IOPS, sg_len 1)
+ Transfer of 4096 x 4 sectors (4096 x 2 KiB) took 0.664025735 seconds (12632 kB/s, 12336 KiB/s, 6168.43 IOPS, sg_len 1)
+ Transfer of 2048 x 8 sectors (2048 x 4 KiB) took 0.406048814 seconds (20659 kB/s, 20174 KiB/s, 5043.72 IOPS, sg_len 1)
+ Transfer of 1024 x 16 sectors (1024 x 8 KiB) took 0.238170214 seconds (35221 kB/s, 34395 KiB/s, 4299.44 IOPS, sg_len 1)
+ Transfer of 512 x 32 sectors (512 x 16 KiB) took 0.134112297 seconds (62549 kB/s, 61083 KiB/s, 3817.69 IOPS, sg_len 1)
+ Transfer of 256 x 64 sectors (256 x 32 KiB) took 0.092653116 seconds (90537 kB/s, 88415 KiB/s, 2762.99 IOPS, sg_len 1)
+ Transfer of 128 x 128 sectors (128 x 64 KiB) took 0.066529126 seconds (126089 kB/s, 123134 KiB/s, 1923.96 IOPS, sg_len 1)
+ Transfer of 64 x 256 sectors (64 x 128 KiB) took 0.060343144 seconds (139015 kB/s, 135756 KiB/s, 1060.60 IOPS, sg_len 2)
+ Transfer of 32 x 512 sectors (32 x 256 KiB) took 0.058746014 seconds (142794 kB/s, 139447 KiB/s, 544.71 IOPS, sg_len 4)
+ Transfer of 16 x 1024 sectors (16 x 512 KiB) took 0.055998737 seconds (149799 kB/s, 146289 KiB/s, 285.72 IOPS, sg_len 8)
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 31. Consecutive write performance by transfer size...
+ Transfer of 16384 x 1 sectors (16384 x 0.5 KiB) took 14.689749114 seconds (571 kB/s, 557 KiB/s, 1115.33 IOPS, sg_len 1)
+ Transfer of 8192 x 2 sectors (8192 x 1 KiB) took 9.694368417 seconds (865 kB/s, 845 KiB/s, 845.02 IOPS, sg_len 1)
+ Transfer of 4096 x 4 sectors (4096 x 2 KiB) took 7.330786454 seconds (1144 kB/s, 1117 KiB/s, 558.73 IOPS, sg_len 1)
+ Transfer of 2048 x 8 sectors (2048 x 4 KiB) took 1.321478847 seconds (6347 kB/s, 6199 KiB/s, 1549.77 IOPS, sg_len 1)
+ Transfer of 1024 x 16 sectors (1024 x 8 KiB) took 0.857473506 seconds (9782 kB/s, 9553 KiB/s, 1194.20 IOPS, sg_len 1)
+ Transfer of 512 x 32 sectors (512 x 16 KiB) took 0.896936063 seconds (9352 kB/s, 9133 KiB/s, 570.83 IOPS, sg_len 1)
+ Transfer of 256 x 64 sectors (256 x 32 KiB) took 0.505627950 seconds (16590 kB/s, 16201 KiB/s, 506.30 IOPS, sg_len 1)
+ Transfer of 128 x 128 sectors (128 x 64 KiB) took 0.386924315 seconds (21680 kB/s, 21172 KiB/s, 330.81 IOPS, sg_len 1)
+ Transfer of 64 x 256 sectors (64 x 128 KiB) took 0.275283870 seconds (30472 kB/s, 29758 KiB/s, 232.48 IOPS, sg_len 2)
+ Transfer of 32 x 512 sectors (32 x 256 KiB) took 0.229257629 seconds (36590 kB/s, 35732 KiB/s, 139.58 IOPS, sg_len 4)
+ Transfer of 16 x 1024 sectors (16 x 512 KiB) took 0.219491863 seconds (38218 kB/s, 37322 KiB/s, 72.89 IOPS, sg_len 8)
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 32. Consecutive trim performance by transfer size...
+ Transfer of 16384 x 1 sectors (16384 x 0.5 KiB) took 68.638767769 seconds (122 kB/s, 119 KiB/s, 238.69 IOPS, sg_len 8)
+ Transfer of 8192 x 2 sectors (8192 x 1 KiB) took 34.089442369 seconds (246 kB/s, 240 KiB/s, 240.30 IOPS, sg_len 8)
+ Transfer of 4096 x 4 sectors (4096 x 2 KiB) took 16.723519607 seconds (501 kB/s, 489 KiB/s, 244.92 IOPS, sg_len 8)
+ Transfer of 2048 x 8 sectors (2048 x 4 KiB) took 7.788614474 seconds (1077 kB/s, 1051 KiB/s, 262.94 IOPS, sg_len 8)
+ Transfer of 1024 x 16 sectors (1024 x 8 KiB) took 3.898156609 seconds (2151 kB/s, 2101 KiB/s, 262.68 IOPS, sg_len 8)
+ Transfer of 512 x 32 sectors (512 x 16 KiB) took 1.945387472 seconds (4312 kB/s, 4210 KiB/s, 263.18 IOPS, sg_len 8)
+ Transfer of 256 x 64 sectors (256 x 32 KiB) took 0.974152301 seconds (8611 kB/s, 8409 KiB/s, 262.79 IOPS, sg_len 8)
+ Transfer of 128 x 128 sectors (128 x 64 KiB) took 0.486756278 seconds (17233 kB/s, 16829 KiB/s, 262.96 IOPS, sg_len 8)
+ Transfer of 64 x 256 sectors (64 x 128 KiB) took 0.243544082 seconds (34443 kB/s, 33636 KiB/s, 262.78 IOPS, sg_len 8)
+ Transfer of 32 x 512 sectors (32 x 256 KiB) took 0.130687838 seconds (64188 kB/s, 62683 KiB/s, 244.85 IOPS, sg_len 8)
+ Transfer of 16 x 1024 sectors (16 x 512 KiB) took 0.059139918 seconds (141843 kB/s, 138518 KiB/s, 270.54 IOPS, sg_len 8)
+ Transfer of 8 x 2048 sectors (8 x 1024 KiB) took 0.030443255 seconds (275548 kB/s, 269090 KiB/s, 262.78 IOPS, sg_len 8)
+ Transfer of 4 x 4096 sectors (4 x 2048 KiB) took 0.015855925 seconds (529051 kB/s, 516652 KiB/s, 252.27 IOPS, sg_len 8)
+ Transfer of 2 x 8192 sectors (2 x 4096 KiB) took 0.008726528 seconds (961276 kB/s, 938746 KiB/s, 229.18 IOPS, sg_len 8)
+ Transfer of 1 x 16384 sectors (1 x 8192 KiB) took 0.005057626 seconds (1658605 kB/s, 1619732 KiB/s, 197.72 IOPS, sg_len 8)
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 33. Random read performance by transfer size...
+ Transfer of 80453 x 1 sectors (80453 x 0.5 KiB) took 10.000046653 seconds (4119 kB/s, 4022 KiB/s, 8045.26 IOPS, sg_len 1)
+ Transfer of 68061 x 2 sectors (68061 x 1 KiB) took 10.000071796 seconds (6969 kB/s, 6806 KiB/s, 6806.05 IOPS, sg_len 1)
+ Transfer of 61089 x 4 sectors (61089 x 2 KiB) took 10.000181586 seconds (12510 kB/s, 12217 KiB/s, 6108.78 IOPS, sg_len 1)
+ Transfer of 50776 x 8 sectors (50776 x 4 KiB) took 10.000102805 seconds (20797 kB/s, 20310 KiB/s, 5077.54 IOPS, sg_len 1)
+ Transfer of 45149 x 16 sectors (45149 x 8 KiB) took 10.000036037 seconds (36985 kB/s, 36119 KiB/s, 4514.88 IOPS, sg_len 1)
+ Transfer of 35717 x 32 sectors (35717 x 16 KiB) took 10.000206449 seconds (58517 kB/s, 57146 KiB/s, 3571.62 IOPS, sg_len 1)
+ Transfer of 26440 x 64 sectors (26440 x 32 KiB) took 10.000276291 seconds (86636 kB/s, 84605 KiB/s, 2643.92 IOPS, sg_len 1)
+ Transfer of 16974 x 128 sectors (16974 x 64 KiB) took 10.000344456 seconds (111236 kB/s, 108629 KiB/s, 1697.34 IOPS, sg_len 1)
+ Transfer of 10081 x 256 sectors (10081 x 128 KiB) took 10.000506487 seconds (132126 kB/s, 129030 KiB/s, 1008.04 IOPS, sg_len 2)
+ Transfer of 5454 x 512 sectors (5454 x 256 KiB) took 10.000626894 seconds (142964 kB/s, 139613 KiB/s, 545.36 IOPS, sg_len 4)
+ Transfer of 2783 x 1024 sectors (2783 x 512 KiB) took 10.003001777 seconds (145865 kB/s, 142446 KiB/s, 278.21 IOPS, sg_len 8)
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 34. Random write performance by transfer size...
+ Transfer of 10541 x 1 sectors (10541 x 0.5 KiB) took 10.000108671 seconds (539 kB/s, 527 KiB/s, 1054.08 IOPS, sg_len 1)
+ Transfer of 10690 x 2 sectors (10690 x 1 KiB) took 10.000473523 seconds (1094 kB/s, 1068 KiB/s, 1068.94 IOPS, sg_len 1)
+ Transfer of 8688 x 4 sectors (8688 x 2 KiB) took 10.013726324 seconds (1776 kB/s, 1735 KiB/s, 867.60 IOPS, sg_len 1)
+ Transfer of 7632 x 8 sectors (7632 x 4 KiB) took 10.000721599 seconds (3125 kB/s, 3052 KiB/s, 763.14 IOPS, sg_len 1)
+ Transfer of 6276 x 16 sectors (6276 x 8 KiB) took 10.015875480 seconds (5133 kB/s, 5012 KiB/s, 626.60 IOPS, sg_len 1)
+ Transfer of 1827 x 32 sectors (1827 x 16 KiB) took 10.001724241 seconds (2992 kB/s, 2922 KiB/s, 182.66 IOPS, sg_len 1)
+ Transfer of 1476 x 64 sectors (1476 x 32 KiB) took 10.002427682 seconds (4835 kB/s, 4722 KiB/s, 147.56 IOPS, sg_len 1)
+ Transfer of 1219 x 128 sectors (1219 x 64 KiB) took 10.023557742 seconds (7970 kB/s, 7783 KiB/s, 121.61 IOPS, sg_len 1)
+ Transfer of 1068 x 256 sectors (1068 x 128 KiB) took 10.000078221 seconds (13998 kB/s, 13670 KiB/s, 106.79 IOPS, sg_len 2)
+ Transfer of 892 x 512 sectors (892 x 256 KiB) took 10.000952634 seconds (23381 kB/s, 22833 KiB/s, 89.19 IOPS, sg_len 4)
+ Transfer of 593 x 1024 sectors (593 x 512 KiB) took 10.001833752 seconds (31084 kB/s, 30356 KiB/s, 59.28 IOPS, sg_len 8)
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 35. Large sequential read into scattered pages...
+ Transfer of 20 x 1024 sectors (20 x 512 KiB) took 0.072149672 seconds (145333 kB/s, 141927 KiB/s, 277.20 IOPS, sg_len 128)
+ Transfer of 20 x 1024 sectors (20 x 512 KiB) took 0.071834549 seconds (145970 kB/s, 142549 KiB/s, 278.41 IOPS, sg_len 128)
+ Transfer of 20 x 1024 sectors (20 x 512 KiB) took 0.071971717 seconds (145692 kB/s, 142278 KiB/s, 277.88 IOPS, sg_len 128)
+ Transfer of 20 x 1024 sectors (20 x 512 KiB) took 0.072035413 seconds (145563 kB/s, 142152 KiB/s, 277.64 IOPS, sg_len 128)
+ Transfer of 20 x 1024 sectors (20 x 512 KiB) took 0.071961380 seconds (145713 kB/s, 142298 KiB/s, 277.92 IOPS, sg_len 128)
+ Transfer of 20 x 1024 sectors (20 x 512 KiB) took 0.071946853 seconds (145743 kB/s, 142327 KiB/s, 277.98 IOPS, sg_len 128)
+ Transfer of 20 x 1024 sectors (20 x 512 KiB) took 0.071973952 seconds (145688 kB/s, 142273 KiB/s, 277.87 IOPS, sg_len 128)
+ Transfer of 20 x 1024 sectors (20 x 512 KiB) took 0.071846840 seconds (145946 kB/s, 142525 KiB/s, 278.36 IOPS, sg_len 128)
+ Transfer of 20 x 1024 sectors (20 x 512 KiB) took 0.071891539 seconds (145855 kB/s, 142436 KiB/s, 278.19 IOPS, sg_len 128)
+ Transfer of 20 x 1024 sectors (20 x 512 KiB) took 0.072045470 seconds (145543 kB/s, 142132 KiB/s, 277.60 IOPS, sg_len 128)
+ Transfer of 200 x 1024 sectors (200 x 512 KiB) took 0.747615688 seconds (140256 kB/s, 136968 KiB/s, 267.51 IOPS, sg_len 128)
+ Transfer of 200 x 1024 sectors (200 x 512 KiB) took 0.747422926 seconds (140292 kB/s, 137004 KiB/s, 267.58 IOPS, sg_len 128)
+ Transfer of 200 x 1024 sectors (200 x 512 KiB) took 0.747311181 seconds (140313 kB/s, 137024 KiB/s, 267.62 IOPS, sg_len 128)
+ Transfer of 200 x 1024 sectors (200 x 512 KiB) took 0.748035295 seconds (140177 kB/s, 136891 KiB/s, 267.36 IOPS, sg_len 128)
+ Transfer of 200 x 1024 sectors (200 x 512 KiB) took 0.747146355 seconds (140344 kB/s, 137054 KiB/s, 267.68 IOPS, sg_len 128)
+ Transfer of 2000 x 1024 sectors (2000 x 512 KiB) took 7.586870118 seconds (138209 kB/s, 134970 KiB/s, 263.61 IOPS, sg_len 128)
+ Transfer of 2000 x 1024 sectors (2000 x 512 KiB) took 7.584044061 seconds (138260 kB/s, 135020 KiB/s, 263.71 IOPS, sg_len 128)
+ Transfer of 2000 x 1024 sectors (2000 x 512 KiB) took 7.582292161 seconds (138292 kB/s, 135051 KiB/s, 263.77 IOPS, sg_len 128)
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 36. Large sequential write from scattered pages...
+ Transfer of 20 x 1024 sectors (20 x 512 KiB) took 0.255307867 seconds (41071 kB/s, 40108 KiB/s, 78.33 IOPS, sg_len 128)
+ Transfer of 20 x 1024 sectors (20 x 512 KiB) took 0.269432009 seconds (38918 kB/s, 38005 KiB/s, 74.23 IOPS, sg_len 128)
+ Transfer of 20 x 1024 sectors (20 x 512 KiB) took 0.262193938 seconds (39992 kB/s, 39055 KiB/s, 76.27 IOPS, sg_len 128)
+ Transfer of 20 x 1024 sectors (20 x 512 KiB) took 0.251033860 seconds (41770 kB/s, 40791 KiB/s, 79.67 IOPS, sg_len 128)
+ Transfer of 20 x 1024 sectors (20 x 512 KiB) took 0.257088541 seconds (40786 kB/s, 39830 KiB/s, 77.79 IOPS, sg_len 128)
+ Transfer of 20 x 1024 sectors (20 x 512 KiB) took 0.246969098 seconds (42457 kB/s, 41462 KiB/s, 80.98 IOPS, sg_len 128)
+ Transfer of 20 x 1024 sectors (20 x 512 KiB) took 0.249589263 seconds (42012 kB/s, 41027 KiB/s, 80.13 IOPS, sg_len 128)
+ Transfer of 20 x 1024 sectors (20 x 512 KiB) took 0.267932936 seconds (39135 kB/s, 38218 KiB/s, 74.64 IOPS, sg_len 128)
+ Transfer of 20 x 1024 sectors (20 x 512 KiB) took 0.252758102 seconds (41485 kB/s, 40513 KiB/s, 79.12 IOPS, sg_len 128)
+ Transfer of 20 x 1024 sectors (20 x 512 KiB) took 0.255414585 seconds (41053 kB/s, 40091 KiB/s, 78.30 IOPS, sg_len 128)
+ Transfer of 200 x 1024 sectors (200 x 512 KiB) took 2.601255746 seconds (40310 kB/s, 39365 KiB/s, 76.88 IOPS, sg_len 128)
+ Transfer of 200 x 1024 sectors (200 x 512 KiB) took 2.556027651 seconds (41023 kB/s, 40062 KiB/s, 78.24 IOPS, sg_len 128)
+ Transfer of 200 x 1024 sectors (200 x 512 KiB) took 2.547282965 seconds (41164 kB/s, 40199 KiB/s, 78.51 IOPS, sg_len 128)
+ Transfer of 200 x 1024 sectors (200 x 512 KiB) took 2.471213240 seconds (42431 kB/s, 41437 KiB/s, 80.93 IOPS, sg_len 128)
+ Transfer of 200 x 1024 sectors (200 x 512 KiB) took 2.547445275 seconds (41161 kB/s, 40197 KiB/s, 78.51 IOPS, sg_len 128)
+ Transfer of 2000 x 1024 sectors (2000 x 512 KiB) took 25.923089105 seconds (40449 kB/s, 39501 KiB/s, 77.15 IOPS, sg_len 128)
+ Transfer of 2000 x 1024 sectors (2000 x 512 KiB) took 25.999751642 seconds (40330 kB/s, 39384 KiB/s, 76.92 IOPS, sg_len 128)
+ Transfer of 2000 x 1024 sectors (2000 x 512 KiB) took 26.182517328 seconds (40048 kB/s, 39110 KiB/s, 76.38 IOPS, sg_len 128)
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 40. Read performance with non-blocking req 4k to 4MB...
+ Transfer of 32768 x 8 sectors (32768 x 4 KiB) took 7.680762498 seconds (17474 kB/s, 17064 KiB/s, 4266.24 IOPS, sg_len 1)
+ Transfer of 16384 x 16 sectors (16384 x 8 KiB) took 5.351520653 seconds (25080 kB/s, 24492 KiB/s, 3061.55 IOPS, sg_len 1)
+ Transfer of 8192 x 32 sectors (8192 x 16 KiB) took 2.901583860 seconds (46256 kB/s, 45172 KiB/s, 2823.28 IOPS, sg_len 1)
+ Transfer of 4096 x 64 sectors (4096 x 32 KiB) took 2.184540214 seconds (61439 kB/s, 59999 KiB/s, 1874.99 IOPS, sg_len 1)
+ Transfer of 2048 x 128 sectors (2048 x 64 KiB) took 1.249348730 seconds (107430 kB/s, 104912 KiB/s, 1639.25 IOPS, sg_len 1)
+ Transfer of 1024 x 256 sectors (1024 x 128 KiB) took 0.924730377 seconds (145142 kB/s, 141740 KiB/s, 1107.34 IOPS, sg_len 2)
+ Transfer of 512 x 512 sectors (512 x 256 KiB) took 0.910428281 seconds (147422 kB/s, 143967 KiB/s, 562.37 IOPS, sg_len 4)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 0.961749887 seconds (139555 kB/s, 136284 KiB/s, 266.18 IOPS, sg_len 8)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 0.963646776 seconds (139281 kB/s, 136016 KiB/s, 265.65 IOPS, sg_len 8)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 0.963618560 seconds (139285 kB/s, 136020 KiB/s, 265.66 IOPS, sg_len 8)
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 41. Write performance blocking req 1 to 512 sg elems...
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 3.329434886 seconds (40312 kB/s, 39367 KiB/s, 76.88 IOPS, sg_len 8)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 3.282436454 seconds (40889 kB/s, 39931 KiB/s, 77.99 IOPS, sg_len 8)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 3.256789340 seconds (41211 kB/s, 40245 KiB/s, 78.60 IOPS, sg_len 16)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 3.185350652 seconds (42135 kB/s, 41148 KiB/s, 80.36 IOPS, sg_len 32)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 3.246993123 seconds (41336 kB/s, 40367 KiB/s, 78.84 IOPS, sg_len 64)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 3.278737102 seconds (40935 kB/s, 39976 KiB/s, 78.07 IOPS, sg_len 128)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 3.317547062 seconds (40456 kB/s, 39508 KiB/s, 77.16 IOPS, sg_len 128)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 3.414643481 seconds (39306 kB/s, 38385 KiB/s, 74.97 IOPS, sg_len 128)
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 42. Write performance non-blocking req 1 to 512 sg elems...
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 3.339692056 seconds (40188 kB/s, 39246 KiB/s, 76.65 IOPS, sg_len 8)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 3.298391275 seconds (40691 kB/s, 39738 KiB/s, 77.61 IOPS, sg_len 8)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 3.272250244 seconds (41016 kB/s, 40055 KiB/s, 78.23 IOPS, sg_len 16)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 3.180630499 seconds (42198 kB/s, 41209 KiB/s, 80.48 IOPS, sg_len 32)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 3.256504388 seconds (41215 kB/s, 40249 KiB/s, 78.61 IOPS, sg_len 64)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 3.284043921 seconds (40869 kB/s, 39911 KiB/s, 77.95 IOPS, sg_len 128)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 3.337033617 seconds (40220 kB/s, 39277 KiB/s, 76.71 IOPS, sg_len 128)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 3.420000307 seconds (39244 kB/s, 38325 KiB/s, 74.85 IOPS, sg_len 128)
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 43. Read performance blocking req 1 to 512 sg elems...
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 0.964934370 seconds (139095 kB/s, 135835 KiB/s, 265.30 IOPS, sg_len 8)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 0.963930891 seconds (139239 kB/s, 135976 KiB/s, 265.57 IOPS, sg_len 8)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 0.964540465 seconds (139151 kB/s, 135890 KiB/s, 265.41 IOPS, sg_len 16)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 0.964784910 seconds (139116 kB/s, 135856 KiB/s, 265.34 IOPS, sg_len 32)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 0.964365582 seconds (139177 kB/s, 135915 KiB/s, 265.45 IOPS, sg_len 64)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 0.965303691 seconds (139041 kB/s, 135783 KiB/s, 265.20 IOPS, sg_len 128)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 0.965441977 seconds (139022 kB/s, 135763 KiB/s, 265.16 IOPS, sg_len 128)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 0.966146815 seconds (138920 kB/s, 135664 KiB/s, 264.97 IOPS, sg_len 128)
+ Result OK
+ Tests completed.
+ Starting tests of card mmc00001...
+ Test case 44. Read performance non-blocking req 1 to 512 sg elems...
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 0.964512529 seconds (139156 kB/s, 135894 KiB/s, 265.41 IOPS, sg_len 8)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 0.965285253 seconds (139044 kB/s, 135785 KiB/s, 265.20 IOPS, sg_len 8)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 0.965193342 seconds (139057 kB/s, 135798 KiB/s, 265.23 IOPS, sg_len 16)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 0.965476617 seconds (139017 kB/s, 135758 KiB/s, 265.15 IOPS, sg_len 32)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 0.964162485 seconds (139206 kB/s, 135943 KiB/s, 265.51 IOPS, sg_len 64)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 0.964962865 seconds (139091 kB/s, 135831 KiB/s, 265.29 IOPS, sg_len 128)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 0.965623005 seconds (138995 kB/s, 135738 KiB/s, 265.11 IOPS, sg_len 128)
+ Transfer of 256 x 1024 sectors (256 x 512 KiB) took 0.965327157 seconds (139038 kB/s, 135779 KiB/s, 265.19 IOPS, sg_len 128)
+ Result OK
+ Tests completed.

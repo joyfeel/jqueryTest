@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<META content="text/html;charset=utf-8" http-equiv="Content-Type">
+<META NAME="joyfeel" CONTENT="emmcTester">
+<html>
+    <head>
+        <title> emmcTester </title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<link rel="stylesheet" href="js/css/node_modules/normalize.css">			
+		<link rel="stylesheet" href="js/jqueryUI/jquery-ui.min.css">	
+		<link rel="stylesheet" href="js/myStyle.css">			
+
+		<script src="js/jquery/jquery-2.1.3.min.js"></script>
+		<script src="js/jqueryUI/jquery-ui.min.js"></script>
+		<script src="js/cmdProcess.js"></script>
+		<script>
+        $( document ).ready(function(){				
+ 			$( ".cmdSelected" ).menu({					//Create
+				items: "> :not(.cmdTitle)"
+			});
+    	});
+        </script>
+    </head>
+    <body>
+		<!-- content -->
+		<div id="content">
+			<div id="top">
+				emmcTest
+			</div>
+			<!-- left -->
+			<div id="left">
+				<ul class="cmdSelected">
+					<li class="cmdTitle">eMMC Command</li>
+						<li class="cmdTypeA">Command 6</li> 
+						<li class="cmdTypeA">Command 13</li> 
+					<li class="cmdTitle">Test case A</li>
+						<li class="cmdTypeB">Basic write (no data verification)<span hidden>1</span></li>
+						<li class="cmdTypeB">Basic read (no data verification)<span hidden>2</span></li>
+						<li class="cmdTypeB">Basic write (with data verification)<span hidden>3</span></li>
+						<li class="cmdTypeB">Basic read (with data verification)<span hidden>4</span></li>
+
+						<li class="cmdTypeB">Multi-block write<span hidden>5</span></li>
+						<li class="cmdTypeB">Multi-block read<span hidden>6</span></li>
+						<li class="cmdTypeB">Power of two block writes<span hidden>7</span></li>
+						<li class="cmdTypeB">Power of two block reads<span hidden>8</span></li>
+						<li class="cmdTypeB">Weird sized block writes<span hidden>9</span></li>
+						<li class="cmdTypeB">Weird sized block reads<span hidden>10</span></li>
+						<li class="cmdTypeB">Badly aligned write<span hidden>11</span></li>
+						<li class="cmdTypeB">Badly aligned read<span hidden>12</span></li>
+						<li class="cmdTypeB">Badly aligned multi-block write<span hidden>13</span></li>
+						<li class="cmdTypeB">Badly aligned multi-block read<span hidden>14</span></li>
+						<li class="cmdTypeB">Correct xfer_size at write (start failure)<span hidden>15</span></li>
+						<li class="cmdTypeB">Correct xfer_size at read (start failure)<span hidden>16</span></li>
+						<li class="cmdTypeB">Correct xfer_size at write (midway failure)<span hidden>17</span></li>
+						<li class="cmdTypeB">Correct xfer_size at read (midway failure)<span hidden>18</span></li>
+						<li class="cmdTypeB">Single write<span hidden>28</span></li>
+						<li class="cmdTypeB">Test only<span hidden>49</span></li>
+<!--
+						<li class="cmdTypeB">Highmem write<span hidden>19</span></li>
+						<li class="cmdTypeB">Highmem read<span hidden>20</span></li>
+						<li class="cmdTypeB">TEST WRITE<span hidden>49</span></li>
+-->
+						<li class="cmdTypeB">Switch to default partition<span hidden>51</span></li>
+						<li class="cmdTypeB">Switch to boot 1 partition<span hidden>52</span></li>
+						<li class="cmdTypeB">Switch to boot 2 partition<span hidden>53</span></li>
+						<li class="cmdTypeB">Switch to RPMB partition<span hidden>54</span></li>
+						<!-- <li class="cmdTypeB">eMMC hw reset<span hidden>45</span></li> -->
+						<li class="cmdTypeH">eMMC reset (Reset Host)<span hidden>99</span></li>
+						<!-- <li class="cmdTypeB">Open file read<span hidden>58</span></li> -->
+						<!-- <li class="cmdTypeB">Open file write<span hidden>59</span></li> -->
+
+					<!-- CMDType = 2<p class"> 'cmdType' hidden>" + cmdType[1] + "</p>" + -->
+					<li class="cmdTitle">Test Case B</li>
+						<!-- <li class="cmdTypeC">READ<span hidden>0</span></li> -->
+						<li class="cmdTypeC">WRITE (Open-ended)<span hidden>0</span></li>
+						<li class="cmdTypeD">READ (Open-ended)<span hidden>0</span></li>
+						<li class="cmdTypeC">WRITE (Pre-defined)<span hidden>1</span></li>
+						<li class="cmdTypeD">READ (Pre-defined)<span hidden>1</span></li>
+					<!-- CMDType = 4 -->
+					<li class="cmdTitle">Test Case C</li>
+						<li class="cmdTypeE">ERASE<span hidden>0</span></li>
+					<li class="cmdTitle">Test Case D</li>
+						<li class="cmdTypeF">GPP1<span hidden>143</span></li>
+						<li class="cmdTypeF">GPP2<span hidden>146</span></li>
+						<li class="cmdTypeF">GPP3<span hidden>149</span></li>
+						<li class="cmdTypeF">GPP4<span hidden>152</span></li>			
+						<li class="cmdTypeG">EUDA<span hidden>0</span></li>
+						<li class="cmdTypeB">Complete<span hidden>57</span></li>
+					<li class="cmdTitle">Test Case E</li>
+						<li class="cmdTypeB">Vendor Command 60 enable<span hidden>60</span></li>
+						<li class="cmdTypeB">Vendor Command 60 disable<span hidden>61</span></li>
+				</ul>
+			</div>
+
+			<!-- main -->
+			<div id="main">
+				<div class="TextBoxesGroup">
+
+				</div>
+				<div class="ResponseGroup">
+					
+				</div>
+			</div>
+
+			<!-- nav button -->
+			<div id="nav">
+				<form id="form1" action="#" enctype="multipart/form-data" method="post">
+					<fieldset>
+						<input type="submit" id="buttonSend" value="Send">
+						<input type="button" id="buttonReset" value="Reset">
+					</fieldset>
+				</form>
+
+				<form id="form2" action="#" enctype="multipart/form-data" method="post">
+					<fieldset>
+						<input type="file" id="buttonUploadJSON" value="uploadJSON">
+						<!-- <input type="button" id="buttonTest" value="Test"> -->
+					</fieldset>
+				</form>
+
+
+			</div>
+
+			<!-- foot Copyright -->
+			<div id="foot">
+
+			</div>
+		</div>
+
+   </body>
+</html>

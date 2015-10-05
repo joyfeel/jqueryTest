@@ -1,0 +1,156 @@
+* {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	    	box-sizing: border-box;
+}
+
+body {
+	margin: 0 auto;
+}
+/*
+body{margin:0 auto;}
+
+#content{width:800px;
+              margin:0 auto;}
+              background-color:#69C;
+
+#top{width:800px;
+          height:80px;
+          background-color:#CF6;}
+
+#nav{width:800px;
+          height:40px;
+          background-color:#F96;}
+
+#left{width:120px;
+         float:left;}
+
+#main{width:680px;
+          min-height:588px;
+          background-color:#CFF;
+          float:right;}
+
+#foot{width:800px;
+         height:60px;
+         background-color:#390;
+         clear:both;}
+*/
+#content {
+	max-width: 1700px;
+	margin: 0 auto;
+}
+
+#top {
+	max-width: 1700px;
+	height: 30px;
+	background-color: #AAAAAA;
+}
+
+#left {
+	width:400px;
+    float:left;
+}
+
+.cmdTitle {
+	border: 1px solid #e78f08;
+	background: #f6a828 url("jqueryUI/images/ui-bg_gloss-wave_35_f6a828_500x100.png") 50% 50% repeat-x;
+	color: #ffffff;
+	font-weight: bold;
+	padding: 0.2em;
+}
+
+.cmdSelected {
+	height: 800px;
+	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+#main {
+	height: 800px;
+	width: 1300px;
+	float: right;
+	background-color: #CFF;
+}
+/*
+.TextBoxesGroup {
+	height: 500px;
+	max-width: 70%;
+	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	
+}
+
+
+*/
+
+.TextBoxesGroup {
+	height: 400px;
+	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	margin-left: 1%;
+}
+
+.ResponseGroup {
+	height: 400px;
+	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	margin-left: 1%;
+
+}
+/*
+#nav {
+	max-width: 1000px;
+	height:40px;
+	background-color:#F96;
+}
+*/
+/*
+fieldset {
+	margin: 0;
+	padding: 0;
+	border-width: 0;
+}
+*/
+/*
+.ui-menu { 
+	width: 150px; 
+}
+*/
+
+
+
+
+
+.divTextBox {
+	padding-left 	: 15px;
+	padding-top 	: 5px;
+	height 			: 30px;
+}
+
+.labelSetting {
+	display: inline-block;
+	width: 300px;
+	height: 30px;
+}
+
+.textTextBoxSetting {
+	border					: 1px solid #848484;
+	outline					: 0;
+	-webkit-border-radius	: 30px;
+	-moz-border-radius 		: 30px;
+	border-radius 			: 30px;
+	margin-right 			: 7px;
+	height 					: 20px;
+	width					: 90px;
+	padding-left 			: 10px;
+	padding-right 			: 10px;
+}
+
+.fileTextBoxSetting {
+	margin-left : 7px;
+}
+

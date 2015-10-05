@@ -1,0 +1,6 @@
+[239240.000069] mmc0: Starting tests of card mmc0:0001...
+[239240.000083] mmc0: Test case 1. Basic write (no data verification)...
+[239240.052108] sdhci: Timeout waiting for Buffer Read Ready interrupt during tuning procedure, falling back to fixed sampling clock
+[239240.056215] cmd->error
+[239240.056221] mmc0: Result: ERROR (-110)
+[239240.056224] mmc0: Tests completed.

@@ -1,0 +1,405 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"stat",
+				"statusFiles"
+			],
+			[
+				"in",
+				"input"
+			],
+			[
+				"r",
+				"response"
+			],
+			[
+				"app",
+				"append"
+			],
+			[
+				"for",
+				"formdata"
+			],
+			[
+				"data",
+				"dataType"
+			],
+			[
+				"to",
+				"toString"
+			],
+			[
+				"l",
+				"log"
+			],
+			[
+				"appen",
+				"appendTo"
+			],
+			[
+				"cmdType",
+				"cmdTypeB"
+			],
+			[
+				"CMD",
+				"CMDINDEX"
+			],
+			[
+				"f",
+				"function"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 72.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/var/www/html/emmc/bjaxSend.html",
+		"/var/www/html/emmc/statusFiles/timing_bus/bus_width/config",
+		"/var/www/html/emmc/statusFiles/timing_bus/timing/config",
+		"/home/vli/Desktop/mmc_test/timing/set_file",
+		"/home/vli/Desktop/mmc_test/bus_width/set_file",
+		"/var/www/html/emmc/statusFiles/myEclipseLog.log",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1434098816",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1434098781",
+		"/home/vli/Desktop/URlog/20150615",
+		"/home/vli/Desktop/URlog/20150615_3",
+		"/home/vli/Desktop/URlog/20150615_1",
+		"/home/vli/Desktop/CMD script file/pattern/pattern_5A_256",
+		"/home/vli/Desktop/URlog/lol",
+		"/home/vli/Desktop/URlog/40000",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433922792",
+		"/home/vli/Desktop/URlog/20150609/20150609_d",
+		"/home/vli/Desktop/URlog/20150609/20150609_18",
+		"/home/vli/Desktop/URlog/20150609/20150609_17",
+		"/home/vli/Desktop/URlog/20150609/20150609_16",
+		"/home/vli/Desktop/URlog/20150609/20150609_15",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433915816",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433915331",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433915276",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433915986",
+		"/home/vli/Desktop/URlog/20150609/20150609_20",
+		"/home/vli/Desktop/URlog/20150609/20150609_e",
+		"/home/vli/Desktop/URlog/20150608_7",
+		"/home/vli/Desktop/URlog/20150609/20150609_14",
+		"/home/vli/Desktop/URlog/20150609/20150609_13",
+		"/home/vli/Desktop/URlog/20150608_30",
+		"/home/vli/Desktop/URlog/20150608_21",
+		"/home/vli/Desktop/URlog/20150608_19",
+		"/home/vli/Desktop/URlog/20150608_18",
+		"/home/vli/Desktop/URlog/20150609/20150609_7",
+		"/home/vli/Desktop/URlog/20150608_10",
+		"/home/vli/Desktop/URlog/20150608",
+		"/home/vli/Desktop/URlog/20150608_1",
+		"/home/vli/Desktop/URlog/20150608_4",
+		"/home/vli/Desktop/URlog/20150605_2",
+		"/home/vli/Desktop/URlog/20150605_1",
+		"/home/vli/Desktop/URlog/20150605",
+		"/home/vli/Desktop/URlog/20150601",
+		"/home/vli/Desktop/CMD script file/pattern/pattern_ASCII_all_4096",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433473435",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433473640",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433473846",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433406599",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433406271",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433406213",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433406107",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433472093",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433470478",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433418433",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433417586",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433402366",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433402736",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433403236",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433403679",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433404163",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433404874",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433405671",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433405667",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433405894",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433406795",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433407571",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433406994",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433401092",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433402156",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433401977",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433401858",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433401717",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433401622",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433401473",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433401391",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433401276",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433401127",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433401044",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433401038",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433400967",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433400963",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433400893",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433400889",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433400830",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433400827",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433400736",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433400733",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433400651",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433400648",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433400544",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433400540",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433400401",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433400405",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433399841",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433399813",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433399740",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433399651",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433399580",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433399526",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433396754",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433396705",
+		"/home/vli/Desktop/CMD script file/pattern/pattern_AA_256",
+		"/home/vli/Desktop/CMD script file/pattern_4096",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433396364",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433396253",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433396210",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433396154",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433390610",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433390559",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433390039",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433390013",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433389956",
+		"/home/vli/Desktop/CMD script file/pattern/010",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1433389572",
+		"/home/vli/Desktop/URlog/555",
+		"/home/vli/Desktop/URlog/1M",
+		"/home/vli/Desktop/URlog/2M",
+		"/home/vli/Desktop/URlog/20150525",
+		"/home/vli/Desktop/URlog/123",
+		"/home/vli/Desktop/URlog/2015_05_21_14_30",
+		"/home/vli/Desktop/URlog/2015_05_21_13_50",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1432088747",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1432088361",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1432031616",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1432017048",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1432017112",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1432031575",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1431689916",
+		"/var/www/html/emmc/statusFiles/uploadFiles/1431689990"
+	],
+	"find":
+	{
+		"height": 32.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"input type='file'",
+			"cmdType",
+			"cmdTypeJ",
+			"cmdTypeH",
+			"abcdefghijklmnop",
+			".ajax",
+			"qu",
+			"WTF",
+			"7",
+			"V8",
+			"V7",
+			"01",
+			"a",
+			"1",
+			"A",
+			"41",
+			"test",
+			"cmdTypeI",
+			"cmdTypeA",
+			"time",
+			"processResponseJSON",
+			"async",
+			"asy",
+			"getFil",
+			"getFile",
+			"ajax",
+			"/emmc/statusFiles/getFile.php",
+			"postCmdFIFO",
+			"php",
+			"submit",
+			"php",
+			".ajax",
+			"doPollSequenceFile",
+			"cmdResultObject",
+			"cmdArrayOfResultObject",
+			"cmdResultJSON",
+			"cmdArrayOfResultObject",
+			"cmdResultJSON",
+			"appendFileSta",
+			"JSONObject",
+			"cmdListArray",
+			"JSONObject",
+			"cmdLabel",
+			"appendFileStatus",
+			"filename",
+			"#buttonSend",
+			"$( \"#buttonSend\" )",
+			"formData",
+			"dataType",
+			"files",
+			"file_data",
+			"post",
+			"files",
+			"{\n",
+			"processFileSubmit",
+			"uploadFiles",
+			"processSendJSON",
+			"textFile",
+			"filebox",
+			"name",
+			"this.name",
+			"processFileSubmit",
+			"adasdasdasdwadasdsdsadddddddddddddddddddsad23132qw1e65qw4e8fs5f4s5d64f65sd4f65s4f65sd4f65",
+			"29108ncdsm, ls dfjkls dfs mcksaodjaso9duas9pdisa"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"a"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "bjaxSend.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
