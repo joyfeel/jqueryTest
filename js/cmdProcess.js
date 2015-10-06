@@ -38,7 +38,7 @@ function fileCounter () {
 $(function() {
 	var cmdCount = commandCounter();
 	var fileCount = fileCounter();
-	var cmdType = [1, 2 ,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+	var cmdType = [1, 2 ,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 
 	var files = new Array();
 	var cmdListArray = new Array();
@@ -301,6 +301,30 @@ $(function() {
 		cmdCount.increment();
 	});
 
+	//Case N - Write
+	$( "li.cmdTypeN" ).on("click", function() {
+		var selected = $(this).clone().children().remove().end().text();
+
+		var newDiv = $(document.createElement("div")).attr("class", "divTextBox");
+		var customTestcaseNumber = parseInt($(this).find("span").text());
+		//3
+		newDiv.after().html("<p class = 'cmdType' hidden>" + cmdType[13] + "</p>" +
+			  "<span  class = 'testcaseNumber' hidden>" + customTestcaseNumber + "</span>" +
+			  "<label class = 'cmdIndex'>" + selected + "</label>" +
+			  "<input type='text' name='textbox" + cmdCount.use() + 
+			  "' class='textbox" + cmdCount.use() + "' value=''>" + 
+			  "<input type='text' name='textbox" + cmdCount.use() + 
+			  "' class='textbox" + cmdCount.use() + "' value=''>" +
+			  "<input type='text' name='textbox" + cmdCount.use() + 
+			  "' class='textbox" + cmdCount.use() + "' value=''>" +			  
+			  "<input type='file' name='textbox" + cmdCount.use() + 
+			  "' class='filebox" + cmdCount.use() + "' value='' >");
+		newDiv.appendTo(".TextBoxesGroup");
+
+		cssTextDiv(cmdCount.use());
+		cmdCount.increment();
+	});
+
 	$( ".TextBoxesGroup" ).on("click", ".cmdIndex", function() {
 		cmdCount.decrement();
 		$(this).parent().remove();
@@ -532,7 +556,8 @@ $(function() {
 		$("<th style='width:25%' align='left'>" + "CMD" 			+ "</td>" + 
 		"<th style='width:10%' align='left'>" 	+ "Argument[0]" 	+ "</td>" + 
 		"<th style='width:10%' align='left'>" 	+ "Argument[1]" 	+ "</td>" + 
-		"<th style='width:25%' align='left'>" 	+ "Argument[2]" 	+ "</td>" + 
+		"<th style='width:15%' align='left'>" 	+ "Argument[2]" 	+ "</td>" + 
+		"<th style='width:10%' align='left'>" 	+ "Argument[3]" 	+ "</td>" + 
 		"<th style='width:10%' align='left'>" 	+ "Resp       "		+ "</td>" + 
 		"<th style='width:20%' align='left'>" 	+ "ReadFileName " 	+ "</td>").appendTo(tr);
 		
