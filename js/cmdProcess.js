@@ -108,6 +108,7 @@ $(function() {
 			  "' class='textbox" + cmdCount.use() + "' value=''>" +
 			  "<input type='file' name='textbox" + cmdCount.use() + 
 			  "' class='filebox" + cmdCount.use() + "' value='' >");
+
 		newDiv.appendTo(".TextBoxesGroup");
 
 		cssTextDiv(cmdCount.use());
@@ -603,8 +604,6 @@ $(function() {
 	}
 
 	function sendResultJSON (cmdResultJSON) {
-		//console.log(JSON.stringify(cmdResultJSON));
-
 		var datas= [{
 		    "title": "  Nac",
 		    "no1": "1212",
@@ -620,8 +619,6 @@ $(function() {
 		    "no1": "1227",
 		    "no2": "1"
 		}];
-
-
 		$.ajax({
 			url: "statusFiles/getResponse.php",
 			type: "POST",
@@ -638,8 +635,6 @@ $(function() {
 		    }
 		});
 	}
-
-
 
 	function setCmdIndex (cmdObject, cmdIndex, testcase) {
 		cmdLabelToTabel.push(cmdIndex);
@@ -707,15 +702,10 @@ $(function() {
 		var data = new FormData();
 		$.each(files, function(key, value) {
 			data.append(key, value);
-			console.log(key);
-			console.log(value);
 		});
 		
-		//for (var i = 0; i < 5; i++) {
-			ajaxSendFile (data);
-		//}
 
-		
+		ajaxSendFile (data);
 	}
 
 	function ajaxSendFile (data) {
@@ -950,7 +940,6 @@ $(function() {
 							});
 
 						break;
-
 						case 4:
 							$("li.cmdTypeD").find("span").filter(function() {
 								if ($(this).text() == data.CMD[i].CMDINDEX) {
@@ -1171,6 +1160,40 @@ $(function() {
 								}
 							});					
 						break;
+						case 14:
+							$("li.cmdTypeN").find("span").filter(function() {
+								if ($(this).text() == data.CMD[i].CMDINDEX) {
+									var selected = $(this).parent().clone().children().remove().end().text();
+									var argument_start = data.CMD[i].Argument[0].toString(16);
+									var argument_end   = data.CMD[i].Argument[1].toString(16);
+									var sleepLBA   	   = data.CMD[i].Argument[2].toString(16);
+									var pattern_file   = data.CMD[i].Argument[3];
+									var newDiv = $(document.createElement("div")).attr("class", "divTextBox");	
+									var customTestcaseNumber = parseInt($(this).text());
+
+									newDiv.after().html("<p class = 'cmdType' hidden>" + cmdType[13] + "</p>" +
+										  "<span  class = 'testcaseNumber' hidden>" + customTestcaseNumber + "</span>" +
+										  "<label class = 'cmdIndex'>" + selected + "</label>" +
+										  "<input type='text' name='textbox" + cmdCount.use() + 
+										  "' class='textbox" + cmdCount.use() + "' value='"+ argument_start + "'>" + 
+										  "<input type='text' name='textbox" + cmdCount.use() + 
+										  "' class='textbox" + cmdCount.use() + "' value='"+ argument_end + "'>" +
+										  "<input type='text' name='textbox" + cmdCount.use() + 
+										  "' class='textbox" + cmdCount.use() + "' value='"+ sleepLBA + "'>" +										  
+										  "<input type='text' name='textbox" + cmdCount.use() + 
+										  "' class='textFile' value='" + pattern_file + "' disabled>");
+										  /*
+										  "<input type='text' name='textbox" + cmdCount.use() + 
+										  "' class='filebox" + cmdCount.use() + "' value='pattern2'>");
+										  */
+									newDiv.appendTo(".TextBoxesGroup");
+
+									cssTextDiv(cmdCount.use());
+									cmdCount.increment();
+								}
+							});
+
+						break;						
 						default:
 					}
 				}

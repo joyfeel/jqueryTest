@@ -1,36 +1,88 @@
-[  416.631082] sdhci: Secure Digital Host Controller Interface driver
-[  416.631089] sdhci: Copyright(c) Pierre Ossman
-[  416.635634] sdhci-acpi 80860F14:01: No vmmc regulator found
-[  416.635643] sdhci-acpi 80860F14:01: No vqmmc regulator found
-[  416.646114] mmc0: SDHCI controller on ACPI [80860F14:01] using ADMA
-[  416.762482] mmc0: BKOPS_EN bit is not set
-[  416.774946] mmc0: new DDR MMC card at address 0001
-[  416.775103] mmc_test mmc0:0001: Card claimed for testing.
-[  416.775107] Hello World!
-[  416.775112] mpm_setup_cdev OK!
-[  416.775114] mpm_setup_cdev OK!
-[  417.691268] mmc0: Starting tests of card mmc0:0001...
-[  417.691280] mmc0: Test case 66. VIA set buffer length...
-[  417.691283] mmc0: Result: OK
-[  417.691286] mmc0: Tests completed.
-[  417.725294] mmc0: Starting tests of card mmc0:0001...
-[  417.725305] mmc0: Test case 47. VIA open file write (Open-ended)...
-[  417.725309] Start address is 0
-[  417.725311] Block count is 8192
-[  417.725313] Quotient is 1024
-[  417.725315] Remainder is 0
-[  417.725422] LBA is 0
-[  418.206612] mmc0: Result: OK
-[  418.206620] mmc0: Tests completed.
-[  418.248199] 2+2++2+2++0+12288+256+0+0
-[  418.248766] mmc0: Starting tests of card mmc0:0001...
-[  418.248775] mmc0: Test case 95. VIA open file write sleep (Open-ended)...
-[  418.248779] Start address is 0
-[  418.248781] Block count is 12288
-[  418.248783] Quotient is 1536
-[  418.248785] Remainder is 0
-[  418.248874] Sleep!LBA is 0
-[  418.260935] Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!LBA is 2000
-[  418.756354] Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!Sleep!
-[  418.977520] mmc0: Result: OK
-[  418.977525] mmc0: Tests completed.
+[ 1477.568540] mmc0: card 0001 removed
+[ 1477.568593] Bye World!
+[ 1478.646401] sdhci: Secure Digital Host Controller Interface driver
+[ 1478.646406] sdhci: Copyright(c) Pierre Ossman
+[ 1478.647936] sdhci-acpi 80860F14:01: No vmmc regulator found
+[ 1478.647942] sdhci-acpi 80860F14:01: No vqmmc regulator found
+[ 1478.651667] mmc0: SDHCI controller on ACPI [80860F14:01] using ADMA
+[ 1478.780607] mmc0: BKOPS_EN bit is not set
+[ 1478.790831] mmc0: new DDR MMC card at address 0001
+[ 1478.791011] mmc_test mmc0:0001: Card claimed for testing.
+[ 1478.791016] Hello World!
+[ 1478.791023] mpm_setup_cdev OK!
+[ 1478.791026] mpm_setup_cdev OK!
+[ 1479.694343] mmc0: Starting tests of card mmc0:0001...
+[ 1479.694354] mmc0: Test case 1. Basic write (no data verification)...
+[ 1479.698640] mmc0: Result: OK
+[ 1479.698645] mmc0: Tests completed.
+[ 1479.738855] mmc0: Starting tests of card mmc0:0001...
+[ 1479.738865] mmc0: Test case 2. Basic read (no data verification)...
+[ 1479.739320] mmc0: Result: OK
+[ 1479.739325] mmc0: Tests completed.
+[ 1479.779000] mmc0: Starting tests of card mmc0:0001...
+[ 1479.779012] mmc0: Test case 66. VIA set buffer length...
+[ 1479.779017] mmc0: Result: OK
+[ 1479.779021] mmc0: Tests completed.
+[ 1479.819009] mmc0: Starting tests of card mmc0:0001...
+[ 1479.819019] mmc0: Test case 66. VIA set buffer length...
+[ 1479.819024] mmc0: Result: OK
+[ 1479.819026] mmc0: Tests completed.
+[ 1479.858682] mmc0: Starting tests of card mmc0:0001...
+[ 1479.858691] mmc0: Test case 47. VIA open file write (Open-ended)...
+[ 1479.858696] Start address is 0
+[ 1479.858698] Block count is 16384
+[ 1479.858700] Quotient is 2048
+[ 1479.858701] Remainder is 0
+[ 1479.858791] LBA is 0
+[ 1480.290151] LBA is 2000
+[ 1480.766759] mmc0: Result: OK
+[ 1480.766767] mmc0: Tests completed.
+[ 1480.826383] +0+16384+4096+0+0
+[ 1480.827018] mmc0: Starting tests of card mmc0:0001...
+[ 1480.827028] mmc0: Test case 95. VIA open file write sleep (Open-ended)...
+[ 1480.827032] Start address is 0
+[ 1480.827034] Block count is 16384
+[ 1480.827036] Quotient is 2048
+[ 1480.827038] Remainder is 0
+[ 1480.831398] LBA is 0
+[ 1481.338236] LBA is 2000
+[ 1481.816735] mmc0: Result: OK
+[ 1481.816742] mmc0: Tests completed.
+[ 1481.856382] mmc0: Starting tests of card mmc0:0001...
+[ 1481.856394] mmc0: Test case 59. VIA open file write (Pre-defined)...
+[ 1481.856399] my_sg_len is 1
+[ 1481.856402] Start address is 0
+[ 1481.856403] Block count is 16384
+[ 1481.856405] Quotient is 2048
+[ 1481.856407] Remainder is 0
+[ 1482.812299] mmc0: Result: OK
+[ 1482.812307] mmc0: Tests completed.
+[ 1482.852714] +0+65536+4096+0+0
+[ 1482.853265] mmc0: Starting tests of card mmc0:0001...
+[ 1482.853274] mmc0: Test case 96. VIA open file write sleep (Pre-defined)...
+[ 1482.853278] my_sg_len is 1
+[ 1482.853281] Start address is 0
+[ 1482.853282] Block count is 65536
+[ 1482.853284] Quotient is 8192
+[ 1482.853286] Remainder is 0
+[ 1486.580621] mmc0: Result: OK
+[ 1486.580629] mmc0: Tests completed.
+[ 1486.621953] mmc0: Starting tests of card mmc0:0001...
+[ 1486.621963] mmc0: Test case 72. VIA Pre-defined write (Reliable)...
+[ 1486.621967] my_sg_len is 1
+[ 1486.621970] Start address is 0
+[ 1486.621972] Block count is 8192
+[ 1486.621973] Quotient is 1024
+[ 1486.621975] Remainder is 0
+[ 1487.569260] mmc0: Result: OK
+[ 1487.569280] mmc0: Tests completed.
+[ 1487.608870] +0+32768+4096+0+0
+[ 1487.609436] mmc0: Starting tests of card mmc0:0001...
+[ 1487.609446] mmc0: Test case 97. VIA Pre-defined write sleep (Reliable)...
+[ 1487.609450] my_sg_len is 1
+[ 1487.609452] Start address is 0
+[ 1487.609454] Block count is 32768
+[ 1487.609456] Quotient is 4096
+[ 1487.609457] Remainder is 0
+[ 1491.312197] mmc0: Result: OK
+[ 1491.312203] mmc0: Tests completed.
