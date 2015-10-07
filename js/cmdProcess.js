@@ -590,7 +590,7 @@ $(function() {
 			count = -1;
 		}
 
-		for (var i = 0; i < (3 - count - 1); i++) {
+		for (var i = 0; i < (4 - count - 1); i++) {
 			$("<td>" + "" + "</td>").appendTo(tr);
 		}
 
