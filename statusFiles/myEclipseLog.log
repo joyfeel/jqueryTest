@@ -1,88 +1,58 @@
-[ 1477.568540] mmc0: card 0001 removed
-[ 1477.568593] Bye World!
-[ 1478.646401] sdhci: Secure Digital Host Controller Interface driver
-[ 1478.646406] sdhci: Copyright(c) Pierre Ossman
-[ 1478.647936] sdhci-acpi 80860F14:01: No vmmc regulator found
-[ 1478.647942] sdhci-acpi 80860F14:01: No vqmmc regulator found
-[ 1478.651667] mmc0: SDHCI controller on ACPI [80860F14:01] using ADMA
-[ 1478.780607] mmc0: BKOPS_EN bit is not set
-[ 1478.790831] mmc0: new DDR MMC card at address 0001
-[ 1478.791011] mmc_test mmc0:0001: Card claimed for testing.
-[ 1478.791016] Hello World!
-[ 1478.791023] mpm_setup_cdev OK!
-[ 1478.791026] mpm_setup_cdev OK!
-[ 1479.694343] mmc0: Starting tests of card mmc0:0001...
-[ 1479.694354] mmc0: Test case 1. Basic write (no data verification)...
-[ 1479.698640] mmc0: Result: OK
-[ 1479.698645] mmc0: Tests completed.
-[ 1479.738855] mmc0: Starting tests of card mmc0:0001...
-[ 1479.738865] mmc0: Test case 2. Basic read (no data verification)...
-[ 1479.739320] mmc0: Result: OK
-[ 1479.739325] mmc0: Tests completed.
-[ 1479.779000] mmc0: Starting tests of card mmc0:0001...
-[ 1479.779012] mmc0: Test case 66. VIA set buffer length...
-[ 1479.779017] mmc0: Result: OK
-[ 1479.779021] mmc0: Tests completed.
-[ 1479.819009] mmc0: Starting tests of card mmc0:0001...
-[ 1479.819019] mmc0: Test case 66. VIA set buffer length...
-[ 1479.819024] mmc0: Result: OK
-[ 1479.819026] mmc0: Tests completed.
-[ 1479.858682] mmc0: Starting tests of card mmc0:0001...
-[ 1479.858691] mmc0: Test case 47. VIA open file write (Open-ended)...
-[ 1479.858696] Start address is 0
-[ 1479.858698] Block count is 16384
-[ 1479.858700] Quotient is 2048
-[ 1479.858701] Remainder is 0
-[ 1479.858791] LBA is 0
-[ 1480.290151] LBA is 2000
-[ 1480.766759] mmc0: Result: OK
-[ 1480.766767] mmc0: Tests completed.
-[ 1480.826383] +0+16384+4096+0+0
-[ 1480.827018] mmc0: Starting tests of card mmc0:0001...
-[ 1480.827028] mmc0: Test case 95. VIA open file write sleep (Open-ended)...
-[ 1480.827032] Start address is 0
-[ 1480.827034] Block count is 16384
-[ 1480.827036] Quotient is 2048
-[ 1480.827038] Remainder is 0
-[ 1480.831398] LBA is 0
-[ 1481.338236] LBA is 2000
-[ 1481.816735] mmc0: Result: OK
-[ 1481.816742] mmc0: Tests completed.
-[ 1481.856382] mmc0: Starting tests of card mmc0:0001...
-[ 1481.856394] mmc0: Test case 59. VIA open file write (Pre-defined)...
-[ 1481.856399] my_sg_len is 1
-[ 1481.856402] Start address is 0
-[ 1481.856403] Block count is 16384
-[ 1481.856405] Quotient is 2048
-[ 1481.856407] Remainder is 0
-[ 1482.812299] mmc0: Result: OK
-[ 1482.812307] mmc0: Tests completed.
-[ 1482.852714] +0+65536+4096+0+0
-[ 1482.853265] mmc0: Starting tests of card mmc0:0001...
-[ 1482.853274] mmc0: Test case 96. VIA open file write sleep (Pre-defined)...
-[ 1482.853278] my_sg_len is 1
-[ 1482.853281] Start address is 0
-[ 1482.853282] Block count is 65536
-[ 1482.853284] Quotient is 8192
-[ 1482.853286] Remainder is 0
-[ 1486.580621] mmc0: Result: OK
-[ 1486.580629] mmc0: Tests completed.
-[ 1486.621953] mmc0: Starting tests of card mmc0:0001...
-[ 1486.621963] mmc0: Test case 72. VIA Pre-defined write (Reliable)...
-[ 1486.621967] my_sg_len is 1
-[ 1486.621970] Start address is 0
-[ 1486.621972] Block count is 8192
-[ 1486.621973] Quotient is 1024
-[ 1486.621975] Remainder is 0
-[ 1487.569260] mmc0: Result: OK
-[ 1487.569280] mmc0: Tests completed.
-[ 1487.608870] +0+32768+4096+0+0
-[ 1487.609436] mmc0: Starting tests of card mmc0:0001...
-[ 1487.609446] mmc0: Test case 97. VIA Pre-defined write sleep (Reliable)...
-[ 1487.609450] my_sg_len is 1
-[ 1487.609452] Start address is 0
-[ 1487.609454] Block count is 32768
-[ 1487.609456] Quotient is 4096
-[ 1487.609457] Remainder is 0
-[ 1491.312197] mmc0: Result: OK
-[ 1491.312203] mmc0: Tests completed.
+[ 1756.460232] mmc0: card 0001 removed
+[ 1756.460312] Bye World!
+[ 1757.518158] sdhci: unknown parameter 'blacklist' ignored
+[ 1757.518295] sdhci: Secure Digital Host Controller Interface driver
+[ 1757.518298] sdhci: Copyright(c) Pierre Ossman
+[ 1757.518606] sdhci_acpi: unknown parameter 'blacklist' ignored
+[ 1757.519879] sdhci-acpi 80860F14:01: No vmmc regulator found
+[ 1757.519886] sdhci-acpi 80860F14:01: No vqmmc regulator found
+[ 1757.524771] mmc0: SDHCI controller on ACPI [80860F14:01] using ADMA
+[ 1757.656909] mmc0: BKOPS_EN bit is not set
+[ 1757.668426] mmc0: new HS200 MMC card at address 0001
+[ 1757.668611] mmc_test mmc0:0001: Card claimed for testing.
+[ 1757.668616] Hello World!
+[ 1757.668623] mpm_setup_cdev OK!
+[ 1757.668626] mpm_setup_cdev OK!
+[ 1758.571580] mmc0: Starting tests of card mmc0:0001...
+[ 1758.571598] mmc0: Test case 49. TEST ONLY...
+[ 1758.578870] ext_csd[GP1_2] is 	0x0	ext_csd[GP1_1] is 	0x0	ext_csd[GP1_0] is 	0x0	
+[ 1758.578884] ext_csd[GP2_2] is 	0x0	ext_csd[GP2_1] is 	0x0	ext_csd[GP2_0] is 	0x0	
+[ 1758.578890] ext_csd[GP3_2] is 	0x0	ext_csd[GP3_1] is 	0x0	ext_csd[GP3_0] is 	0x0	
+[ 1758.578896] ext_csd[GP4_2] is 	0x0	ext_csd[GP4_1] is 	0x0	ext_csd[GP4_0] is 	0x0	
+[ 1758.578907] ext_csd[EUDA_SIZE_MULT_2] is 	0x0	ext_csd[EUDA_SIZE_MULT_1] is 	0x0	ext_csd[EUDA_SIZE_MULT_0] is 	0x0	
+[ 1758.578907] ============================CSD============================
+[ 1758.578912] csd[3] : 92400000
+[ 1758.578915] csd[2] : ffffffef
+[ 1758.578917] csd[1] : f5903ff
+[ 1758.578919] csd[0] : d05e0032
+[ 1758.578921] test->card->ext_csd.data_sector_size is 512
+[ 1758.578923] card->ext_csd.raw_card_type is 23
+[ 1758.578925] test->card->host->ios.bus_width is 3
+[ 1758.578927] host->caps is 3222261583
+[ 1758.578929] host->caps2 is 148000
+[ 1758.578930] EXT_CSD[33] ext_csd[EXT_CSD_CACHE_CTRL] is 1
+[ 1758.578932] EXT_CSD[35] ext_csd[EXT_CSD_PACKED_FAILURE_INDEX] is 0
+[ 1758.578934] EXT_CSD[36] ext_csd[EXT_CSD_PACKED_CMD_STATUS] is 0
+[ 1758.578936] CSD[46:42] card->csd.erase_size is 1024
+[ 1758.578938] 155 EXT_CSD[EXT_CSD_PARTITION_SETTING_COMPLETED] 	: 	0x0
+[ 1758.578939] 156 EXT_CSD[EXT_CSD_PARTITION_ATTRIBUTE] 	: 	0x0
+[ 1758.578941] 160 EXT_CSD[EXT_CSD_PARTITION_SUPPORT] 	: 	0x7
+[ 1758.578943] EXT_CSD[162] is 0
+[ 1758.578945] EXT_CSD[166] ext_csd[EXT_CSD_WR_REL_PARAM] is 5
+[ 1758.578947] EXT_CSD[168] ext_csd[EXT_CSD_RPMB_MULT] is 20
+[ 1758.578948] 175 EXT_CSD[EXT_CSD_ERASE_GROUP_DEF] 	: 	0x1
+[ 1758.578950] EXT_CSD[177] ext_csd[177] is 0
+[ 1758.578952] EXT_CSD[179] ext_csd[179] is 0
+[ 1758.578954] 183 EXT_CSD[EXT_CSD_BUS_WIDTH] 	: 	0x0
+[ 1758.578955] 185 EXT_CSD[EXT_CSD_HS_TIMING] 	: 	0x2
+[ 1758.578957] EXT_CSD[196] ext_csd[EXT_CSD_CARD_TYPE] is 87
+[ 1758.578959] 215:211 (induction) card->ext_csd.sectors is 122142720
+[ 1758.578961] 215:211 Totally capacity is 2
+[ 1758.578963] 221 EXT_CSD[EXT_CSD_HC_WP_GRP_SIZE] 	: 	0x2
+[ 1758.578964] 224 EXT_CSD[EXT_CSD_HC_ERASE_GRP_SIZE] 	: 	0x8
+[ 1758.578966] EXT_CSD[228] ext_csd[228] is 7
+[ 1758.578968] EXT_CSD[231] ext_csd[EXT_CSD_SEC_FEATURE_SUPPORT] is 55
+[ 1758.578970] 501 ext_csd[EXT_CSD_MAX_PACKED_READS] 	: 	0x3F
+[ 1758.578972] 500 ext_csd[EXT_CSD_MAX_PACKED_WRITES] 	: 	0x3F
+[ 1758.578976] mmc0: Result: OK
+[ 1758.578979] mmc0: Tests completed.
