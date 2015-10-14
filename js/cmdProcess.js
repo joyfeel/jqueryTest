@@ -1,5 +1,3 @@
-
-
 //Closure cmdCount
 function commandCounter () {
 	var count = 0;
@@ -53,10 +51,8 @@ $(function() {
 	var pollTestCaseCount = 0;
 	var loopSendControl = false;
 
-	var cmdArrayOfResultObject = new Array();
-		
+	var cmdArrayOfResultObject = new Array();	
 	var cmdResultJSON = new Object();
-
 
 	function cssTextDiv(count) {
 		$(".cmdIndex").addClass("labelSetting");
@@ -217,10 +213,10 @@ $(function() {
 		var selected = $(this).clone().children().remove().end().text();
 
 		var newDiv = $(document.createElement("div")).attr("class", "divTextBox");
-		var customTestcaseNumber = parseInt($(this).find("span").text());
+		var normalTestcaseNumber = parseInt($(this).find("span").text());
 		//3
 		newDiv.after().html("<p class = 'cmdType' hidden>" + cmdType[8] + "</p>" +
-			  "<span  class = 'testcaseNumber' hidden>" + customTestcaseNumber + "</span>" +
+			  "<span  class = 'testcaseNumber' hidden>" + normalTestcaseNumber + "</span>" +
 			  "<label class = 'cmdIndex'>" + selected + "</label>" +
 			  "<input type='text' name='textbox" + cmdCount.use() + 
 			  "' class='textbox" + cmdCount.use() + "' value=''>");
@@ -374,7 +370,6 @@ $(function() {
 	});
 
 	function myFormNormalSubmit(event) {
-
 		if (cmdCount.use() != 0) {
 			processSendJSON();
 			if (hasArgument == false) {
@@ -397,13 +392,11 @@ $(function() {
 		event.stopPropagation(); 	// Stop stuff happening
 		event.preventDefault();  	// Totally stop stuff happening
 
-
 		myFormUnlimitedSubmit(event);
 		loopSendControl = false;
-	});	
+	});
 
 	function myFormUnlimitedSubmit(event) {
-		
 		if (cmdCount.use() != 0) {
 			processSendJSON();
 			if (hasArgument == false) {
@@ -447,12 +440,10 @@ $(function() {
 		if (sequenceFiles.length == pollSequenceFileCount) {															
 			clearTimeout(timer);
 			//$("#buttonSaveResult").show();
- 
 			cmdResultJSON.CMD = cmdArrayOfResultObject;
 			sendResultJSON (cmdResultJSON);
 
 			resetGlobalVariable();
-
 
 		//$( "#buttonSend" ).show();
 		//$("#form3").show();
@@ -463,9 +454,6 @@ $(function() {
 		//$('.responseTable').remove();
 		//$("#buttonSaveJson").hide();
 		//$("#buttonSaveResult").hide();
-
-
-			console.log('!!!!!');
 			myFormUnlimitedSubmit(event);
 			//return false;
 		} else {
@@ -479,7 +467,7 @@ $(function() {
 		if (fileExist(currSequenceFile)) {
 			appendFileStatus(currSequenceFile);		//Append the file content to the front page		
 			pollSequenceFileCount++;
-		} 
+		}
 
 		//After finishing polling all of the sequence files, stop the setTimeout
 		if (sequenceFiles.length == pollSequenceFileCount) {															
@@ -516,8 +504,6 @@ $(function() {
 
 	});
 */
-
-
 	// Catch the form submit and upload the files
 	function uploadFiles(event) {
 
@@ -704,7 +690,6 @@ $(function() {
 			data.append(key, value);
 		});
 		
-
 		ajaxSendFile (data);
 	}
 
@@ -862,7 +847,6 @@ $(function() {
 
 	function getJSON(fileName){
 	  var result;
-
 	  $.ajax({
 	      type: 'GET',
 	      url: "statusFiles/uploadFiles/" + fileName,
@@ -871,6 +855,7 @@ $(function() {
 	      async: false,
 	      success: function(data){
 				var CMD_length = data.CMD.length;
+				console.log('CMD_length = ', CMD_length);
 				for (var i = 0; i < CMD_length; i++) {
 					switch (data.CMD[i].CMDType) {
 						case 1:
@@ -964,7 +949,6 @@ $(function() {
 								}
 							});
 						break;
-
 						case 5:
 							$("li.cmdTypeE").find("span").filter(function() {
 								if ($(this).text() == data.CMD[i].CMDINDEX) {
@@ -1058,6 +1042,7 @@ $(function() {
 									cmdCount.increment();
 								}
 							});
+						break;
 						case 9:
 							$("li.cmdTypeI").find("span").filter(function() {
 								if ($(this).text() == data.CMD[i].CMDINDEX) {
@@ -1076,7 +1061,11 @@ $(function() {
 
 									cssTextDiv(cmdCount.use());
 									cmdCount.increment();
+
+
+									console.log('case 9???');
 								}
+								
 							});
 						break;
 						case 10:
@@ -1192,7 +1181,6 @@ $(function() {
 									cmdCount.increment();
 								}
 							});
-
 						break;						
 						default:
 					}
