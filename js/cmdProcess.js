@@ -46,7 +46,6 @@ $(function() {
 	var cmdLabelToTabel = new Array();
 
 	var pollSequenceFileCount = 0;
-	var timer;
 	var statusDir = "../emmc/statusFiles/";
 	var pollTestCaseCount = 0;
 	var loopSendControl = false;
@@ -71,6 +70,9 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
+
+		selected = null;
+		newDiv = null;
 	});
 
 	//Case A - TestCase
@@ -86,6 +88,10 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
+
+		selected = null;
+		newDiv = null;
+		normalTestcaseNumber = null;
 	});
 
 	//Case B - Write
@@ -109,6 +115,10 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
+
+		selected = null;
+		newDiv = null;
+		customTestcaseNumber = null;
 	});
 
 	//Case C - ReadCase
@@ -129,6 +139,10 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
+
+		selected = null;
+		newDiv = null;
+		customTestcaseNumber = null;
 	});
 
 	//Case C - EraseCase
@@ -148,6 +162,10 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
+
+		selected = null;
+		newDiv = null;
+		customTestcaseNumber = null;		
 	});
 
 	//Case D - GppCase
@@ -168,12 +186,15 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
+
+		selected = null;
+		newDiv = null;
+		customTestcaseNumber = null;		
 	});
 
 	//Case D - UDACase
 	$( "li.cmdTypeG" ).on("click", function() {
 		var selected = $(this).clone().children().remove().end().text();
-
 		var newDiv = $(document.createElement("div")).attr("class", "divTextBox");
 		var customTestcaseNumber = parseInt($(this).find("span").text());
 
@@ -190,12 +211,15 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
+
+		selected = null;
+		newDiv = null;
+		customTestcaseNumber = null;		
 	});
 
 	//Case Reset
 	$( "li.cmdTypeH" ).on("click", function() {
 		var selected = $(this).clone().children().remove().end().text();
-
 		var newDiv = $(document.createElement("div")).attr("class", "divTextBox");
 		var normalTestcaseNumber = parseInt($(this).find("span").text());
 
@@ -206,6 +230,10 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
+
+		selected = null;
+		newDiv = null;
+		normalTestcaseNumber = null;		
 	});
 
 	//Case Set RW/BUFFERSIZE
@@ -224,6 +252,10 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
+
+		selected = null;
+		newDiv = null;
+		normalTestcaseNumber = null;		
 	});
 
 	//Case Reset Timing and Bus_width
@@ -240,6 +272,10 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
+
+		selected = null;
+		newDiv = null;
+		normalTestcaseNumber = null;			
 	});
 
 	//Case K - Programming Key (Single File)
@@ -258,12 +294,15 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
+
+		selected = null;
+		newDiv = null;
+		customTestcaseNumber = null;			
 	});
 
 	//Case L - Authenticated Data Write (Two File, Key + Data)
 	$( "li.cmdTypeL" ).on("click", function() {
 		var selected = $(this).clone().children().remove().end().text();
-
 		var newDiv = $(document.createElement("div")).attr("class", "divTextBox");
 		var customTestcaseNumber = parseInt($(this).find("span").text());
 		//3
@@ -278,6 +317,10 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
+
+		selected = null;
+		newDiv = null;
+		customTestcaseNumber = null;			
 	});
 
 	//Case M - Authenticated Data Read (Single File and file in the disk)
@@ -296,6 +339,10 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
+
+		selected = null;
+		newDiv = null;
+		customTestcaseNumber = null;			
 	});
 
 	//Case N - Write
@@ -320,6 +367,10 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
+
+		selected = null;
+		newDiv = null;
+		customTestcaseNumber = null;
 	});
 
 	$( ".TextBoxesGroup" ).on("click", ".cmdIndex", function() {
@@ -354,12 +405,12 @@ $(function() {
 
 	function resetGlobalVariable() {
 		hasArgument = true;
-	    cmdListArray = new Array();
+	    cmdListArray.length = 0;
+	    sequenceFiles.length = 0;
+	    cmdLabelToTabel.length = 0;
 	    JSONObject = new Object;
 		pollSequenceFileCount = 0;
-		sequenceFiles = new Array();
 		pollTestCaseCount = 0;
-		cmdLabelToTabel = new Array();
 	}
 
 	$("#form1").on('submit', function(event) {
@@ -408,7 +459,9 @@ $(function() {
 			uploadFiles(event);
 			//$("#buttonSaveJson").show();
 			//createTable();
-			doUnlimitedPollSequenceFile();
+			//doUnlimitedPollSequenceFile();
+
+			actionUnlimitedPoll();
 		} else if (cmdCount.use() === 0 && loopSendControl === false){
 			alert ("You must select at least one command!");
 
@@ -428,58 +481,104 @@ $(function() {
 		$("#form3").hide();
 	}
 
+	var currSequenceFileObj = {
+		currSequenceFile: null,
+		timer: null
+	};
+
+	function actionUnlimitedPoll () {
+		currSequenceFileObj.timer = setInterval(doUnlimitedPollSequenceFile, 800);
+	}
+
 	function doUnlimitedPollSequenceFile() {
-		var currSequenceFile = sequenceFiles[pollSequenceFileCount];
+		currSequenceFileObj.currSequenceFile = sequenceFiles[pollSequenceFileCount];
 		//Check whether the file exists or not.
-		if (fileExist(currSequenceFile)) {
-			appendFileStatus(currSequenceFile);		//Append the file content to the front page		
+
+		appendFileStatus(currSequenceFileObj.currSequenceFile);		//Append the file content to the front page	
+
+		//delete currSequenceFileObj;	
+		pollSequenceFileCount++;
+
+		if (fileExist(currSequenceFileObj.currSequenceFile)) {
+			//httpObj = null;
+			//delete httpObj;
+			appendFileStatus(currSequenceFileObj.currSequenceFile, true);		//Append the file content to the front page	
+
+			//currSequenceFileObj = null;
+			delete currSequenceFileObj;	
 			pollSequenceFileCount++;
-		} 
+		}
 
 		//After finishing polling all of the sequence files, stop the setTimeout
 		if (sequenceFiles.length == pollSequenceFileCount) {															
-			clearTimeout(timer);
+			clearInterval(currSequenceFileObj.timer);
+
+			//currSequenceFileObj = null;
+			delete currSequenceFileObj;	
+
 			//$("#buttonSaveResult").show();
 			cmdResultJSON.CMD = cmdArrayOfResultObject;
+			cmdArrayOfResultObject.length = 0;
 			sendResultJSON (cmdResultJSON);
 
+			cmdResultJSON.CMD = null;
+			//cmdResultJSON = null;
+			delete cmdResultJSON;
 			resetGlobalVariable();
 
-		//$( "#buttonSend" ).show();
-		//$("#form3").show();
-		//cmdCount.initialization();
-		//fileCount.initialization();
-		//resetGlobalVariable();
-		//$( ".TextBoxesGroup" ).children().remove();
-		//$('.responseTable').remove();
-		//$("#buttonSaveJson").hide();
-		//$("#buttonSaveResult").hide();
 			myFormUnlimitedSubmit(event);
-			//return false;
-		} else {
-			timer = setTimeout(doUnlimitedPollSequenceFile, 1500);
-		}
-	}	
+		} 
+
+		return false;
+	}
 
 	function doNormalPollSequenceFile() {
-		var currSequenceFile = sequenceFiles[pollSequenceFileCount];
+		currSequenceFileObj.currSequenceFile = sequenceFiles[pollSequenceFileCount];
 		//Check whether the file exists or not.
-		if (fileExist(currSequenceFile)) {
-			appendFileStatus(currSequenceFile);		//Append the file content to the front page		
+		if (fileExist(currSequenceFileObj.currSequenceFile)) {
+			appendFileStatus(currSequenceFileObj.currSequenceFile, false);		//Append the file content to the front page		
 			pollSequenceFileCount++;
 		}
 
 		//After finishing polling all of the sequence files, stop the setTimeout
 		if (sequenceFiles.length == pollSequenceFileCount) {															
-			clearTimeout(timer);
+			clearTimeout(currSequenceFileObj.timer);
 			$("#buttonSaveResult").show();
  
 			cmdResultJSON.CMD = cmdArrayOfResultObject;
 			sendResultJSON (cmdResultJSON);
 			//return false;
 		} else {
-			timer = setTimeout(doNormalPollSequenceFile, 1500);
+			currSequenceFileObj.timer = setTimeout(doNormalPollSequenceFile, 1500);
 		}
+	}
+
+/*
+	var httpObj = {
+		http: null,
+		temp: null
+	};
+*/
+	function fileExist(file) {
+		var http = new XMLHttpRequest();
+		http.open('HEAD', statusDir + file, false);
+		http.send();
+		if (http.status!=404) {
+			http = null;
+			delete http;
+			return true;
+		}
+
+		/*
+		httpObj.http = new XMLHttpRequest();
+		httpObj.http.open('HEAD', statusDir + file, false);
+		httpObj.http.send();
+
+		httpObj.temp = (httpObj.http.status!=404);
+		httpObj.http = null;
+
+		return httpObj.temp;
+		*/
 	}
 /*
 	$("#form3").on('submit', function(event) {
@@ -506,31 +605,20 @@ $(function() {
 */
 	// Catch the form submit and upload the files
 	function uploadFiles(event) {
-
-
 		processFileSubmit();
 	}
 
-	function fileExist(file) {
-		var http = new XMLHttpRequest();
-		http.open('HEAD', statusDir + file, false);
-		http.send();
 
-		return http.status!=404;
-	}
-
-	function appendFileStatus (file) {
+	function appendFileStatus (file, unlimited) {
 		$.ajax({
     		url: statusDir + file,
     		dataType: 'text',
     		async: false,
-    		cache: false,
+    		cache: true,
     		success: function (data) { 
-    			processResponseJSON(data); 
-    			/*
-					var cmdArrayOfResultObject = new Array();
-					var cmdResultObject = new Object();						// {Label + Argument + Response}
-    			*/
+    			if (!unlimited) {
+    				processResponseJSON(data); 
+    			}
     		}
 		});
 	}
@@ -551,10 +639,61 @@ $(function() {
 		tr.appendTo(".responseTable");
 	}
 
+	var processTestObj = {
+		obj: null,
+		tr: null,
+		count: null,
+		cmdResultObject: null,
+		cmdLabel: null
+	};
+		
+
 	function processResponseJSON (data) {
+		processTestObj.obj = $.parseJSON(data);
+		processTestObj.tr = $( "<tr></tr>" );
+		processTestObj.count = 0;
+		processTestObj.cmdResultObject = new Object();
+		processTestObj.cmdLabel = cmdLabelToTabel[pollTestCaseCount++].text();
 
-		//console.log(data);
+		processTestObj.cmdResultObject.cmdLabel = processTestObj.cmdLabel;
 
+		$("<td align='left'>" + processTestObj.cmdLabel + "</td>").appendTo(processTestObj.tr);
+
+		processTestObj.cmdResultObject.cmdArgument = new Array();
+		//cmdResultObject.cmdArgument = obj.Argument;
+		if (processTestObj.obj.Argument != null) {
+			$.each(processTestObj.obj.Argument, function(index, value) {
+				processTestObj.cmdResultObject.cmdArgument.push(value.toString(16));
+				$("<td align='center'>" + value.toString(16) + "</td>").appendTo(processTestObj.tr);
+				processTestObj.count = index;
+			});
+		} else {
+			processTestObj.count = -1;
+		}
+
+		for (var i = 0; i < (4 - processTestObj.count - 1); i++) {
+			$("<td>" + "" + "</td>").appendTo(processTestObj.tr);
+		}
+
+		processTestObj.cmdResultObject.cmdResponse = processTestObj.obj.Response;
+		$("<td align='center'>" + processTestObj.obj.Response + "</td>").appendTo(processTestObj.tr);
+		$("<td align='center'>" + processTestObj.obj.ReadFileName + "</td>").appendTo(processTestObj.tr);
+
+		cmdArrayOfResultObject.push(processTestObj.cmdResultObject);
+		processTestObj.tr.appendTo(".responseTable");
+/*
+		processTestObj.obj = null;
+		processTestObj.tr = null;
+		processTestObj.count = null;
+		processTestObj.cmdResultObject = null;
+		processTestObj.cmdLabel = null;
+*/
+		//processTestObj = null;
+		//delete processTestObj;
+	}
+
+/*
+	function processResponseJSON (data) {
 		var obj = $.parseJSON(data);
 		var tr = $( "<tr></tr>" );
 		var count = 0;
@@ -588,7 +727,7 @@ $(function() {
 		cmdArrayOfResultObject.push(cmdResultObject);
 		tr.appendTo(".responseTable");
 	}
-
+*/
 	function sendResultJSON (cmdResultJSON) {
 		var datas= [{
 		    "title": "  Nac",
@@ -670,6 +809,8 @@ $(function() {
 			sequenceFiles.push( tempSequenceFile );
 			cmdObject.ReadFileName = tempSequenceFile;
 			cmdListArray.push(cmdObject);
+
+			cmdObject = null;
 		});
 		JSONObject.CMD = cmdListArray;
 
