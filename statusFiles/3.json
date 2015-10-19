@@ -1,0 +1,6 @@
+{
+   "Argument" : [ 0, 4096, "pattern4096" ],
+   "CMDINDEX" : 1,
+   "ReadFileName" : "3.json",
+   "Response" : "OK\n"
+}

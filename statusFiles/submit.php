@@ -30,6 +30,8 @@
         $data = array('success' => "Waiting for response...", 'formData' => $_POST['postFormData']);
 
 		exec ("$executionFile $statusFolder $JSONfile");
+
+		$cmdFIFO = null;
 	}
 	
 	echo json_encode($data);

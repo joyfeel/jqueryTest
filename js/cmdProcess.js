@@ -40,7 +40,7 @@ $(function() {
 
 	var files = new Array();
 	var cmdListArray = new Array();
-	var JSONObject = new Object;
+	var JSONObject = new Object();
 	var hasArgument = true;	
 	var sequenceFiles = new Array();
 	var cmdLabelToTabel = new Array();
@@ -70,9 +70,6 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
-
-		selected = null;
-		newDiv = null;
 	});
 
 	//Case A - TestCase
@@ -88,10 +85,6 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
-
-		selected = null;
-		newDiv = null;
-		normalTestcaseNumber = null;
 	});
 
 	//Case B - Write
@@ -115,10 +108,6 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
-
-		selected = null;
-		newDiv = null;
-		customTestcaseNumber = null;
 	});
 
 	//Case C - ReadCase
@@ -139,10 +128,6 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
-
-		selected = null;
-		newDiv = null;
-		customTestcaseNumber = null;
 	});
 
 	//Case C - EraseCase
@@ -162,10 +147,6 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
-
-		selected = null;
-		newDiv = null;
-		customTestcaseNumber = null;		
 	});
 
 	//Case D - GppCase
@@ -186,15 +167,12 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
-
-		selected = null;
-		newDiv = null;
-		customTestcaseNumber = null;		
 	});
 
 	//Case D - UDACase
 	$( "li.cmdTypeG" ).on("click", function() {
 		var selected = $(this).clone().children().remove().end().text();
+
 		var newDiv = $(document.createElement("div")).attr("class", "divTextBox");
 		var customTestcaseNumber = parseInt($(this).find("span").text());
 
@@ -211,15 +189,12 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
-
-		selected = null;
-		newDiv = null;
-		customTestcaseNumber = null;		
 	});
 
 	//Case Reset
 	$( "li.cmdTypeH" ).on("click", function() {
 		var selected = $(this).clone().children().remove().end().text();
+
 		var newDiv = $(document.createElement("div")).attr("class", "divTextBox");
 		var normalTestcaseNumber = parseInt($(this).find("span").text());
 
@@ -230,10 +205,6 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
-
-		selected = null;
-		newDiv = null;
-		normalTestcaseNumber = null;		
 	});
 
 	//Case Set RW/BUFFERSIZE
@@ -252,10 +223,6 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
-
-		selected = null;
-		newDiv = null;
-		normalTestcaseNumber = null;		
 	});
 
 	//Case Reset Timing and Bus_width
@@ -272,10 +239,6 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
-
-		selected = null;
-		newDiv = null;
-		normalTestcaseNumber = null;			
 	});
 
 	//Case K - Programming Key (Single File)
@@ -294,15 +257,12 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
-
-		selected = null;
-		newDiv = null;
-		customTestcaseNumber = null;			
 	});
 
 	//Case L - Authenticated Data Write (Two File, Key + Data)
 	$( "li.cmdTypeL" ).on("click", function() {
 		var selected = $(this).clone().children().remove().end().text();
+
 		var newDiv = $(document.createElement("div")).attr("class", "divTextBox");
 		var customTestcaseNumber = parseInt($(this).find("span").text());
 		//3
@@ -317,10 +277,6 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
-
-		selected = null;
-		newDiv = null;
-		customTestcaseNumber = null;			
 	});
 
 	//Case M - Authenticated Data Read (Single File and file in the disk)
@@ -339,10 +295,6 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
-
-		selected = null;
-		newDiv = null;
-		customTestcaseNumber = null;			
 	});
 
 	//Case N - Write
@@ -367,10 +319,6 @@ $(function() {
 
 		cssTextDiv(cmdCount.use());
 		cmdCount.increment();
-
-		selected = null;
-		newDiv = null;
-		customTestcaseNumber = null;
 	});
 
 	$( ".TextBoxesGroup" ).on("click", ".cmdIndex", function() {
@@ -406,11 +354,13 @@ $(function() {
 	function resetGlobalVariable() {
 		hasArgument = true;
 	    cmdListArray.length = 0;
-	    sequenceFiles.length = 0;
-	    cmdLabelToTabel.length = 0;
-	    JSONObject = new Object;
+
+	    JSONObject.CMD = null;
+	    //JSONObject = null;
 		pollSequenceFileCount = 0;
+		sequenceFiles.length = 0;
 		pollTestCaseCount = 0;
+		cmdLabelToTabel.length = 0;
 	}
 
 	$("#form1").on('submit', function(event) {
@@ -459,9 +409,8 @@ $(function() {
 			uploadFiles(event);
 			//$("#buttonSaveJson").show();
 			//createTable();
-			//doUnlimitedPollSequenceFile();
 
-			actionUnlimitedPoll();
+			startUnlimitedPollSequenceFile();
 		} else if (cmdCount.use() === 0 && loopSendControl === false){
 			alert ("You must select at least one command!");
 
@@ -481,146 +430,101 @@ $(function() {
 		$("#form3").hide();
 	}
 
-	var currSequenceFileObj = {
-		currSequenceFile: null,
-		timer: null
+	var doUnlimitedPoll = {
+		timer: null,
+		currSequenceFile: null
 	};
 
-	function actionUnlimitedPoll () {
-		currSequenceFileObj.timer = setInterval(doUnlimitedPollSequenceFile, 800);
+	function startUnlimitedPollSequenceFile () {
+		doUnlimitedPoll.timer = setInterval(doUnlimitedPollSequenceFile, 1000);
 	}
 
 	function doUnlimitedPollSequenceFile() {
-		currSequenceFileObj.currSequenceFile = sequenceFiles[pollSequenceFileCount];
+		doUnlimitedPoll.currSequenceFile = sequenceFiles[pollSequenceFileCount];
 		//Check whether the file exists or not.
+		if (fileExist(doUnlimitedPoll.currSequenceFile)) {
 
-		appendFileStatus(currSequenceFileObj.currSequenceFile);		//Append the file content to the front page	
-
-		//delete currSequenceFileObj;	
-		pollSequenceFileCount++;
-
-		if (fileExist(currSequenceFileObj.currSequenceFile)) {
-			//httpObj = null;
-			//delete httpObj;
-			appendFileStatus(currSequenceFileObj.currSequenceFile, true);		//Append the file content to the front page	
-
-			//currSequenceFileObj = null;
-			delete currSequenceFileObj;	
+			//appendFileStatus(doUnlimitedPoll.currSequenceFile, true);		//Append the file content to the front page		
 			pollSequenceFileCount++;
-		}
+		} 
 
 		//After finishing polling all of the sequence files, stop the setTimeout
 		if (sequenceFiles.length == pollSequenceFileCount) {															
-			clearInterval(currSequenceFileObj.timer);
-
-			//currSequenceFileObj = null;
-			delete currSequenceFileObj;	
-
+			clearInterval(doUnlimitedPoll.timer);
 			//$("#buttonSaveResult").show();
-			cmdResultJSON.CMD = cmdArrayOfResultObject;
-			cmdArrayOfResultObject.length = 0;
-			sendResultJSON (cmdResultJSON);
+			//cmdResultJSON.CMD = cmdArrayOfResultObject;
+			sendResultJSON ();
 
-			cmdResultJSON.CMD = null;
-			//cmdResultJSON = null;
-			delete cmdResultJSON;
 			resetGlobalVariable();
 
 			myFormUnlimitedSubmit(event);
-		} 
 
-		return false;
-	}
+			return false;
+		} 
+	}	
 
 	function doNormalPollSequenceFile() {
-		currSequenceFileObj.currSequenceFile = sequenceFiles[pollSequenceFileCount];
+		var currSequenceFile = sequenceFiles[pollSequenceFileCount];
 		//Check whether the file exists or not.
-		if (fileExist(currSequenceFileObj.currSequenceFile)) {
-			appendFileStatus(currSequenceFileObj.currSequenceFile, false);		//Append the file content to the front page		
+		if (fileExist(currSequenceFile)) {
+			appendFileStatus(currSequenceFile, false);		//Append the file content to the front page		
 			pollSequenceFileCount++;
 		}
 
 		//After finishing polling all of the sequence files, stop the setTimeout
 		if (sequenceFiles.length == pollSequenceFileCount) {															
-			clearTimeout(currSequenceFileObj.timer);
+			clearTimeout(doUnlimitedPoll.timer);
 			$("#buttonSaveResult").show();
  
-			cmdResultJSON.CMD = cmdArrayOfResultObject;
-			sendResultJSON (cmdResultJSON);
+			//cmdResultJSON.CMD = cmdArrayOfResultObject;
+			//sendResultJSON (cmdResultJSON);
+
+			sendResultJSON ();
 			//return false;
 		} else {
-			currSequenceFileObj.timer = setTimeout(doNormalPollSequenceFile, 1500);
+			doUnlimitedPoll.timer = setTimeout(doNormalPollSequenceFile, 1500);
 		}
 	}
 
-/*
-	var httpObj = {
-		http: null,
-		temp: null
-	};
-*/
-	function fileExist(file) {
-		var http = new XMLHttpRequest();
-		http.open('HEAD', statusDir + file, false);
-		http.send();
-		if (http.status!=404) {
-			http = null;
-			delete http;
-			return true;
-		}
-
-		/*
-		httpObj.http = new XMLHttpRequest();
-		httpObj.http.open('HEAD', statusDir + file, false);
-		httpObj.http.send();
-
-		httpObj.temp = (httpObj.http.status!=404);
-		httpObj.http = null;
-
-		return httpObj.temp;
-		*/
-	}
-/*
-	$("#form3").on('submit', function(event) {
-		
-			if (cmdCount.use() != 0) {
-				processSendJSON();
-				if (hasArgument == false) {
-					resetGlobalVariable();
-					alert ("One of the arguments is empty!");
-					return false;			
-				}
-				hideButton();
-
-				uploadFiles(event);	
-				$("#buttonSaveJson").show();
-				createTable();
-				doPollSequenceFile();
-			} else {
-				alert ("You must select at least one command!");
-				return false;
-			}
-
-	});
-*/
 	// Catch the form submit and upload the files
 	function uploadFiles(event) {
 		processFileSubmit();
 	}
+	var httpObj = {
+		http: null
+	};
 
+	function fileExist(file) {
+		var http = new XMLHttpRequest();
+		//var http = new XMLHttpRequest();
+		http.open('HEAD', statusDir + file, false);
+		http.send();
+
+		if (http.status!=404) {
+			http = null;
+
+			return true;
+		} else {
+			http = null;
+
+			return false;
+		}
+	}
 
 	function appendFileStatus (file, unlimited) {
-		$.ajax({
+		var xhr = $.ajax({
     		url: statusDir + file,
     		dataType: 'text',
     		async: false,
-    		cache: true,
+    		cache: false,
     		success: function (data) { 
     			if (!unlimited) {
-    				processResponseJSON(data); 
+    				processResponseJSON(data); 	
     			}
     		}
 		});
+
+		xhr = null;
 	}
 
 	function createTable () {
@@ -639,60 +543,6 @@ $(function() {
 		tr.appendTo(".responseTable");
 	}
 
-	var processTestObj = {
-		obj: null,
-		tr: null,
-		count: null,
-		cmdResultObject: null,
-		cmdLabel: null
-	};
-		
-
-	function processResponseJSON (data) {
-		processTestObj.obj = $.parseJSON(data);
-		processTestObj.tr = $( "<tr></tr>" );
-		processTestObj.count = 0;
-		processTestObj.cmdResultObject = new Object();
-		processTestObj.cmdLabel = cmdLabelToTabel[pollTestCaseCount++].text();
-
-		processTestObj.cmdResultObject.cmdLabel = processTestObj.cmdLabel;
-
-		$("<td align='left'>" + processTestObj.cmdLabel + "</td>").appendTo(processTestObj.tr);
-
-		processTestObj.cmdResultObject.cmdArgument = new Array();
-		//cmdResultObject.cmdArgument = obj.Argument;
-		if (processTestObj.obj.Argument != null) {
-			$.each(processTestObj.obj.Argument, function(index, value) {
-				processTestObj.cmdResultObject.cmdArgument.push(value.toString(16));
-				$("<td align='center'>" + value.toString(16) + "</td>").appendTo(processTestObj.tr);
-				processTestObj.count = index;
-			});
-		} else {
-			processTestObj.count = -1;
-		}
-
-		for (var i = 0; i < (4 - processTestObj.count - 1); i++) {
-			$("<td>" + "" + "</td>").appendTo(processTestObj.tr);
-		}
-
-		processTestObj.cmdResultObject.cmdResponse = processTestObj.obj.Response;
-		$("<td align='center'>" + processTestObj.obj.Response + "</td>").appendTo(processTestObj.tr);
-		$("<td align='center'>" + processTestObj.obj.ReadFileName + "</td>").appendTo(processTestObj.tr);
-
-		cmdArrayOfResultObject.push(processTestObj.cmdResultObject);
-		processTestObj.tr.appendTo(".responseTable");
-/*
-		processTestObj.obj = null;
-		processTestObj.tr = null;
-		processTestObj.count = null;
-		processTestObj.cmdResultObject = null;
-		processTestObj.cmdLabel = null;
-*/
-		//processTestObj = null;
-		//delete processTestObj;
-	}
-
-/*
 	function processResponseJSON (data) {
 		var obj = $.parseJSON(data);
 		var tr = $( "<tr></tr>" );
@@ -727,8 +577,9 @@ $(function() {
 		cmdArrayOfResultObject.push(cmdResultObject);
 		tr.appendTo(".responseTable");
 	}
-*/
-	function sendResultJSON (cmdResultJSON) {
+
+	function sendResultJSON () {
+		/*
 		var datas= [{
 		    "title": "  Nac",
 		    "no1": "1212",
@@ -744,21 +595,24 @@ $(function() {
 		    "no1": "1227",
 		    "no2": "1"
 		}];
-		$.ajax({
+		*/
+		var xhr = $.ajax({
 			url: "statusFiles/getResponse.php",
 			type: "POST",
 			dataType: "json",
-			data: datas,
+			//data: datas,
 			async: false,
 			cache: false,
 			contentType : 'application/json; charset=utf-8',
 		    success: function(response) {
-		    	console.log("OK3!" + response);
+		    	console.log("OK!" + response);
 		    },
 		    error: function(jqXHR, textStatus, errorThrown) {
 		    	console.log('ERRORS: ' + textStatus);
 		    }
 		});
+
+		xhr = null;
 	}
 
 	function setCmdIndex (cmdObject, cmdIndex, testcase) {
@@ -809,13 +663,15 @@ $(function() {
 			sequenceFiles.push( tempSequenceFile );
 			cmdObject.ReadFileName = tempSequenceFile;
 			cmdListArray.push(cmdObject);
-
-			cmdObject = null;
 		});
+
+		cmdObject = null;
 		JSONObject.CMD = cmdListArray;
 
-		console.log(JSON.stringify(JSONObject));
+		//console.log(JSON.stringify(JSONObject));
 	}
+
+	var dateData = new FormData();
 
 	function processFileSubmit () {
 		console.log(fileCount.use());
@@ -824,29 +680,76 @@ $(function() {
 
 			files = $.merge(files, temp);
 		}
+
+		//temp = null;
 		// START A LOADING SPINNER HERE
 		// Create a formdata object and add the files
-		var data = new FormData();
+		
 		$.each(files, function(key, value) {
-			data.append(key, value);
+			dateData.append(key, value);
 		});
 		
-		ajaxSendFile (data);
+		ajaxSendFile (dateData)
+
+		dateData = null;
 	}
 
-	function ajaxSendFile (data) {
-		$.ajax({
+	function ajaxSendFile (myData) {
+		var xhr = $.ajax({
 		    url: 'statusFiles/submit.php?files',
 		    type: 'POST',
-		    data: data,
+		    data: myData,
 		    cache: false,
-		    //async: false,
+		    async: false,
 		    dataType: 'json',
 		    processData: false, // Don't process the files
 		    contentType: false, // Set content type to false as jQuery will tell the server its a query string request
 		    success: function(data, textStatus, jqXHR) {
 		    	if(typeof data.error === 'undefined') {
-		    		submitForm(event, data);
+					var formData = $(event.target).serialize();
+
+					// You should sterilise the file names
+					$.each(data.files, function(key, value) {
+						formData = formData + '&filenames[]=' + value;
+					});
+
+					var myObj = {
+						postFormData: formData,
+						postCmdFIFO: JSON.stringify(JSONObject)
+					};
+
+					var xhr2 = $.ajax({
+					    url: 'statusFiles/submit.php',
+					    type: 'POST',
+						data: myObj,
+					    cache: false,
+					    async: true,
+					    dataType: 'json',
+					    success: function(data, textStatus, jqXHR) {
+					    	if(typeof data.error === 'undefined') {
+					    		// Success so call function to process the form
+					    		console.log('SUCCESS: ' + data.success);
+
+					    		//return false
+					    	} else {
+					    		// Handle errors here
+					    		console.log('ERRORS: ' + data.error);
+					    	}
+					    },
+					    error: function(jqXHR, textStatus, errorThrown) {
+					    	// Handle errors here
+					    	console.log('ERRORS: ' + textStatus);
+					    }, 
+						complete: function() {
+					    	// STOP LOADING SPINNER
+					    }
+					});
+
+					myObj = null;
+					delete myObj;
+
+					xhr2 = null;
+					formData = null;
 		    	} else {
 		    		console.log('ERRORS: ' + data.error);
 		    	}
@@ -855,35 +758,45 @@ $(function() {
 		    	console.log('ERRORS: ' + textStatus);
 		    }
 		});
+
+		xhr = null;
 	}
+
+	var myXHR = {
+		xhr: null
+	};
 
 	function submitForm(event, data)
 	{
 		// Create a jQuery object from the form
-		$form = $(event.target);
+		//$form = $(event.target);
 
 		// Serialize the form data
-		var formData = $form.serialize();
+		var formData = $(event.target).serialize();
 
 		// You should sterilise the file names
 		$.each(data.files, function(key, value) {
 			formData = formData + '&filenames[]=' + value;
 		});
 
-		$.ajax({
+		var myObj = {
+			postFormData: formData,
+			postCmdFIFO: JSON.stringify(JSONObject)
+		};
+
+		var xhr = $.ajax({
 		    url: 'statusFiles/submit.php',
 		    type: 'POST',
-		    data: {
-				postFormData : formData,
-				postCmdFIFO : JSON.stringify(JSONObject)
-			},
+			data: myObj,
 		    cache: false,
-		    //async: false,
+		    async: true,
 		    dataType: 'json',
 		    success: function(data, textStatus, jqXHR) {
 		    	if(typeof data.error === 'undefined') {
 		    		// Success so call function to process the form
 		    		console.log('SUCCESS: ' + data.success);
+
+		    		//return false
 		    	} else {
 		    		// Handle errors here
 		    		console.log('ERRORS: ' + data.error);
@@ -897,8 +810,14 @@ $(function() {
 		    	// STOP LOADING SPINNER
 		    }
 		});
-    }
 
+		myObj = null;
+		delete myObj;
+
+		xhr = null;
+		formData = null;
+    }
+/*
 	function submitForm2(event, data)
 	{
 		// Create a jQuery object from the form
@@ -939,7 +858,7 @@ $(function() {
 		    }
 		});
     }
-
+*/
     function ajaxJSONFileUpload(fileName) {
 		var formData = new FormData();
 		var file = $("#buttonUploadJSON")[0].files[0];
